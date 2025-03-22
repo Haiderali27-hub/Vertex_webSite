@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertex Solutions - Innovative Outsourcing Solutions</title>
+    <title>Virtex Solutions - Innovative Outsourcing Solutions</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cursor.css">
     <link rel="stylesheet" href="css/animations.css">
@@ -16,7 +16,7 @@
     <header>
         <nav>
             <div class="logo">
-                <span>Vertex</span>Solutions
+                <span>Virtex</span>Solutions
             </div>
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link">Home</a></li>
@@ -51,6 +51,11 @@
         <section id="services" class="services">
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-globe"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Responsive, modern websites and web applications built with cutting-edge technologies.</p>
+                </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-code"></i></div>
                     <h3>Custom Software Development</h3>
@@ -108,7 +113,7 @@
             <h2 class="section-title">About Us</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Vertex Solutions is a cutting-edge tech outsourcing company specializing in delivering innovative solutions. Our team of experts combines creativity with technical expertise to transform your ideas into reality.</p>
+                    <p>Virtex Solutions is a cutting-edge tech outsourcing company specializing in delivering innovative solutions. Our team of experts combines creativity with technical expertise to transform your ideas into reality.</p>
                     <p>With a focus on quality and innovation, we've helped businesses across various industries achieve their digital transformation goals.</p>
                 </div>
                 <div class="stats-container">
@@ -138,31 +143,31 @@
                     </div>
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
-                        <span>contact@vertexsolutions.com</span>
+                        <span>virtexsolutionhr@gmail.com</span>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
-                        <span>+1 (555) 123-4567</span>
+                        <span>+92 312 9529788</span>
                     </div>
                     <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/virtex_solution/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/Asadullahqadir-1/Asad" class="social-icon"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" id="contactForm" action="submit.php" method="POST" onsubmit="return validateForm(event)">
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Your Email" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="subject" placeholder="Subject">
+                        <input type="text" id="subject" name="subject" placeholder="Subject">
                     </div>
                     <div class="form-group">
-                        <textarea id="message" placeholder="Your Message" required></textarea>
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
                     </div>
+                    <div id="formMessage" class="form-message"></div>
                     <button type="submit" class="btn primary-btn">Send Message</button>
                 </form>
             </div>
@@ -172,7 +177,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <span>Vertex</span>Solutions
+                <span>Virtex</span>Solutions
             </div>
             <div class="footer-links">
                 <div class="footer-column">
@@ -187,6 +192,7 @@
                 <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
+                        <li><a href="#">Web Development</a></li>
                         <li><a href="#">Software Development</a></li>
                         <li><a href="#">Mobile Apps</a></li>
                         <li><a href="#">UI/UX Design</a></li>
@@ -196,20 +202,21 @@
                 <div class="footer-column">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="mailto:contact@vertexsolutions.com">Email Us</a></li>
-                        <li><a href="tel:+15551234567">Call Us</a></li>
+                        <li><a href="mailto:virtexsolutionhr@gmail.com">virtexsolutionhr@gmail.com</a></li>
+                        <li><a href="tel:+923129529788">03129529788</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 Vertex Solutions. All rights reserved.</p>
+            <p>&copy; 2023 Virtex Solutions. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
     <script src="js/cursor.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/form.js"></script>
     
     <a href="#" class="scroll-to-top">
         <span class="scroll-text">Scroll to top</span>

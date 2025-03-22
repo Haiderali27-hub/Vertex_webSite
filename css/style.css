@@ -771,4 +771,17 @@ footer {
     .secondary-btn {
         margin-left: 0;
     }
+}
+
+.form-message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+}
+
+.form-message.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #c62828;
 } 
