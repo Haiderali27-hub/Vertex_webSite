@@ -1,0 +1,248 @@
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Glitch Effect */
+.glitch {
+    position: relative;
+    color: var(--text-color);
+    letter-spacing: 2px;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch::before {
+    color: var(--primary-color);
+    z-index: -1;
+    animation: glitch-effect 3s infinite;
+}
+
+.glitch::after {
+    color: #00ffea;
+    z-index: -2;
+    animation: glitch-effect 2s infinite;
+}
+
+@keyframes glitch-effect {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-3px, 3px);
+    }
+    40% {
+        transform: translate(-3px, -3px);
+    }
+    60% {
+        transform: translate(3px, 3px);
+    }
+    80% {
+        transform: translate(3px, -3px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+/* Page Transition */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 9999;
+    transform: translateY(100%);
+    transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.page-transition.active {
+    transform: translateY(0);
+}
+
+/* Animated elements */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-in-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Special Animations */
+.tech-sphere::before,
+.tech-sphere::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 0.4;
+}
+
+.tech-sphere::before {
+    width: 80%;
+    height: 80%;
+    border: 3px dashed rgba(255, 255, 255, 0.3);
+    animation: rotate 20s linear infinite;
+}
+
+.tech-sphere::after {
+    width: 60%;
+    height: 60%;
+    border: 3px dashed rgba(255, 255, 255, 0.2);
+    animation: rotate 15s linear infinite reverse;
+}
+
+/* Animate Stats Counter */
+.stat-number {
+    transition: all 2s ease;
+}
+
+/* Service Card Animation */
+.service-card .icon i {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .icon i {
+    animation: pulse 1s infinite;
+}
+
+/* Menu Toggle Animation */
+.menu-toggle {
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Button Hover Animation */
+.btn:hover {
+    animation: pulse 2s infinite;
+}
+
+/* Project Image Animation */
+.project-img {
+    transition: transform 0.5s ease;
+    overflow: hidden;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
+}
+
+/* Social Icon Animation */
+.social-icon i {
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover i {
+    animation: pulse 1s infinite;
+}
+
+/* Page Load Animation */
+.hero-content h1,
+.hero-content p,
+.hero-content .cta-buttons {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.hero-content h1 {
+    animation-delay: 0.2s;
+}
+
+.hero-content p {
+    animation-delay: 0.4s;
+}
+
+.hero-content .cta-buttons {
+    animation-delay: 0.6s;
+}
+
+.hero-visual {
+    opacity: 0;
+    animation: slideInRight 1s forwards;
+    animation-delay: 0.8s;
+} 

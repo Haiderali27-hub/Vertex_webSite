@@ -1,0 +1,107 @@
+/* Custom Cursor */
+.cursor,
+.cursor-follower {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    mix-blend-mode: difference;
+}
+
+.cursor {
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    transition: 
+        width 0.3s ease,
+        height 0.3s ease,
+        background-color 0.3s ease,
+        transform 0.01s linear;
+}
+
+.cursor-follower {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    transition: 
+        width 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+        height 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+        border-color 0.3s ease,
+        transform 0.15s ease;
+}
+
+/* Cursor States */
+body:hover .cursor,
+body:hover .cursor-follower {
+    opacity: 1;
+}
+
+/* Link hover effect */
+a:hover ~ .cursor,
+button:hover ~ .cursor,
+.btn:hover ~ .cursor,
+.service-card:hover ~ .cursor,
+.project-card:hover ~ .cursor,
+.social-icon:hover ~ .cursor {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+}
+
+a:hover ~ .cursor-follower,
+button:hover ~ .cursor-follower,
+.btn:hover ~ .cursor-follower,
+.service-card:hover ~ .cursor-follower,
+.project-card:hover ~ .cursor-follower,
+.social-icon:hover ~ .cursor-follower {
+    width: 40px;
+    height: 40px;
+    border-color: var(--primary-color);
+    background-color: rgba(255, 0, 53, 0.1);
+}
+
+/* Input focus effect */
+input:focus ~ .cursor,
+textarea:focus ~ .cursor {
+    width: 5px;
+    height: 25px;
+    border-radius: 3px;
+}
+
+input:focus ~ .cursor-follower,
+textarea:focus ~ .cursor-follower {
+    opacity: 0;
+}
+
+/* Hide default cursor */
+html, 
+body, 
+a, 
+button, 
+input, 
+textarea, 
+.btn, 
+.service-card, 
+.project-card, 
+.social-icon,
+.nav-link,
+.menu-toggle,
+.project-link {
+    cursor: none !important;
+}
+
+/* Mobile devices - revert to default cursor */
+@media (max-width: 768px), (pointer: coarse) {
+    .cursor,
+    .cursor-follower {
+        display: none;
+    }
+    
+    html, body, a, button, input, textarea, .btn {
+        cursor: auto !important;
+    }
+} 
