@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initScrollHeader();
     initScrollToTop();
+    initTeamModal();
 });
 
 // Page Transitions
@@ -193,4 +194,107 @@ function initScrollToTop() {
         // Trigger initial scroll event to set correct state
         window.dispatchEvent(new Event('scroll'));
     }
+}
+
+// Team Member Modal
+function initTeamModal() {
+    const modal = document.getElementById('teamModal');
+    const closeBtn = modal.querySelector('.close-modal');
+    const teamMembers = document.querySelectorAll('.team-member');
+    
+    // Team member data
+    const teamData = {
+        'asad-ullah': {
+          name: 'Asad Ullah',
+          position: 'CEO & Founder',
+          bio: 'Visionary leader with 15+ years of experience in tech innovation...',
+          image: 'https://via.placeholder.com/300x300',
+          social: {
+            linkedin: 'https://www.linkedin.com/in/asad-ullah-qadir-32081b172/',
+            github: 'https://github.com/Asadullahqadir-1/Asad',
+            portfolio: 'https://asadullahqadir-1.github.io/portfolio_website/#portfolio'
+          }
+        },
+        'muhammad-haider': {
+          name: 'Muhammad Haider',
+          position: 'CTO',
+          bio: 'Tech innovator specializing in AI and ML...',
+          image: 'https://via.placeholder.com/300x300',
+          social: {
+            linkedin: 'https://www.linkedin.com/in/mhaiderali2710/',
+            github: 'https://github.com/Haiderali27-hub',
+            portfolio: 'https://haiderali27-hub.github.io/my-portfolio/'
+          }
+        },
+        'ghulam-mustafa': {
+          name: 'Ghulam Mustafa',
+          position: 'Lead Developer',
+          bio: 'Full-stack expert with a passion for scalable solutions...',
+          image: 'https://via.placeholder.com/300x300',
+          social: {
+            linkedin: 'https://linkedin.com/in/ghulam-mustafa',
+            github: 'https://github.com/mustafaghulam',
+            portfolio: 'https://mustafaghulam.com'
+          }
+        },
+        'zohaib-iqbal': {
+          name: 'Zohaib Iqbal',
+          position: 'UI/UX Designer',
+          bio: 'Creative designer focused on exceptional UX...',
+          image: 'https://via.placeholder.com/300x300',
+          social: {
+            linkedin: 'https://linkedin.com/in/zohaib-iqbal',
+            github: 'https://github.com/zohaibiqbal',
+            portfolio: 'https://zohaibiqbal.com'
+          }
+        }
+      };
+      
+    teamMembers.forEach(member => {
+        member.addEventListener('click', (e) => {
+            e.preventDefault(); // ✅ This stops the scroll-to-top behavior
+    
+            const memberId = member.getAttribute('data-member');
+            const data = teamData[memberId];
+            
+            // Update modal content
+            modal.querySelector('.modal-image img').src = data.image;
+            modal.querySelector('.modal-name').textContent = data.name;
+            modal.querySelector('.modal-position').textContent = data.position;
+            modal.querySelector('.modal-bio').textContent = data.bio;
+    
+            // Update social links
+            const socialLinks = modal.querySelectorAll('.modal-social-link');
+            socialLinks[0].href = data.social.linkedin;
+            socialLinks[1].href = data.social.github;
+            socialLinks[2].href = data.social.portfolio;
+    
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+
+    // Close modal
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    // Close on outside click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 } 
