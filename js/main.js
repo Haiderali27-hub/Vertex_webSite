@@ -153,7 +153,7 @@ function initScrollToTop() {
             scrollLine.style.height = `${scrollProgress}%`;
             
             // Show/hide the scroll button
-            if (scrolled > 500) {
+            if (scrolled > 200) {
                 scrollToTopBtn.classList.add('visible');
             } else {
                 scrollToTopBtn.classList.remove('visible');
@@ -168,5 +168,29 @@ function initScrollToTop() {
                 behavior: 'smooth'
             });
         });
+        
+        // Add cursor interaction for better integration with site design
+        scrollToTopBtn.addEventListener('mouseenter', () => {
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            
+            if (cursor && cursorFollower) {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.3)';
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('mouseleave', () => {
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            
+            if (cursor && cursorFollower) {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
+            }
+        });
+        
+        // Trigger initial scroll event to set correct state
+        window.dispatchEvent(new Event('scroll'));
     }
 } 
