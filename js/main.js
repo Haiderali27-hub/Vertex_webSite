@@ -208,10 +208,10 @@ function initTeamModal() {
           name: 'Asad Ullah',
           position: 'CEO & Founder',
           bio: 'Visionary leader with 15+ years of experience in tech innovation...',
-          image: 'https://via.placeholder.com/300x300',
+          image: './src/images/popup_team/asad.jpg',
           social: {
             linkedin: 'https://www.linkedin.com/in/asad-ullah-qadir-32081b172/',
-            github: 'https://github.com/Asadullahqadir-1/Asad',
+            github: 'https://github.com/Asadullahqadir-1',
             portfolio: 'https://asadullahqadir-1.github.io/portfolio_website/#portfolio'
           }
         },
@@ -219,7 +219,7 @@ function initTeamModal() {
           name: 'Muhammad Haider',
           position: 'CTO',
           bio: 'Tech innovator specializing in AI and ML...',
-          image: 'https://via.placeholder.com/300x300',
+          image: './src/images/popup_team/haider.jpg',
           social: {
             linkedin: 'https://www.linkedin.com/in/mhaiderali2710/',
             github: 'https://github.com/Haiderali27-hub',
@@ -230,9 +230,9 @@ function initTeamModal() {
           name: 'Ghulam Mustafa',
           position: 'Lead Developer',
           bio: 'Full-stack expert with a passion for scalable solutions...',
-          image: 'https://via.placeholder.com/300x300',
+          image: './src/images/popup_team/gm.png',
           social: {
-            linkedin: 'https://linkedin.com/in/ghulam-mustafa',
+            linkedin: 'https://www.linkedin.com/in/ghulammustafa06/',
             github: 'https://github.com/mustafaghulam',
             portfolio: 'https://mustafaghulam.com'
           }
@@ -241,10 +241,10 @@ function initTeamModal() {
           name: 'Zohaib Iqbal',
           position: 'UI/UX Designer',
           bio: 'Creative designer focused on exceptional UX...',
-          image: 'https://via.placeholder.com/300x300',
+          image: './src/images/popup_team/zohaib.jpg',
           social: {
-            linkedin: 'https://linkedin.com/in/zohaib-iqbal',
-            github: 'https://github.com/zohaibiqbal',
+            linkedin: 'https://www.linkedin.com/in/zohaib-iqbal-a490332a9/',
+            github: 'https://github.com/Zohaibiqbal797',
             portfolio: 'https://zohaibiqbal.com'
           }
         }
