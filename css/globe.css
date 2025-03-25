@@ -1,0 +1,27 @@
+/* Globe Animation Styles */
+#home {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Make sure content appears on top of the globe animation */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(10, 10, 10, 0.5); /* Semi-transparent background for better text readability */
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin-left: 10%;
+}
+
+/* For mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .hero-content {
+        margin: 0 auto;
+        width: 90%;
+    }
+}

@@ -1,0 +1,264 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    color: #ffffff;
+    background-color: #181324; /* Set a background color for non-home sections */
+}
+
+/* Background styles */
+#background {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: -10;
+    top: 0;
+    left: 0;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -20;
+    top: 0;
+    left: 0;
+}
+
+/* Navigation styling */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    background-color: rgba(24, 19, 36, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Blur effect for modern browsers */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.logo span {
+    color: #c52b2b;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #c52b2b;
+}
+
+/* Hero section overlay styles */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+    color: #ffffff;
+    animation: fadeIn 1s ease-in-out;
+    position: relative;
+    z-index: 5;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Button styles */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.primary-btn {
+    background-color: #c52b2b;
+    color: #ffffff;
+    border: 2px solid #c52b2b;
+}
+
+.primary-btn:hover {
+    background-color: #e03131;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(224, 49, 49, 0.4);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Content sections styling */
+main > section:not(#home) {
+    position: relative;
+    padding: 100px 0;
+    background-color: #181324;
+    z-index: 10;
+}
+
+/* Section title styling */
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #ffffff;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #c52b2b;
+}
+
+/* About section styling */
+.about-content, .services-grid, .projects-showcase, .contact-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Menu toggle for mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #0e0e1e;
+    color: #ffffff;
+    padding: 60px 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .btn {
+        width: 200px;
+        text-align: center;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+}
