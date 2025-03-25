@@ -3,6 +3,9 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 /* Make sure content appears on top of the globe animation */
@@ -18,10 +21,87 @@
     margin-left: 10%;
 }
 
+/* Text positioning and animation styling */
+.hero-text-animated {
+    position: relative;
+    z-index: 2;
+    padding: 3rem;
+    max-width: 600px;
+    margin-left: 5%; /* Pushed more to the left */
+}
+
+/* Text animation styles */
+.animated-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: text-fade-in 1s forwards 0.5s;
+}
+
+.animated-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-color-dim);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: text-fade-in 1s forwards 0.8s;
+}
+
+.hero-text-animated .cta-buttons {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: text-fade-in 1s forwards 1.1s;
+}
+
+@keyframes text-fade-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Interactive text hover effect */
+.animated-title, .animated-subtitle {
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    display: inline-block;
+}
+
+.animated-title:hover, .animated-subtitle:hover {
+    transform: translateY(-5px);
+    text-shadow: 0 10px 20px rgba(255, 0, 53, 0.5);
+}
+
+/* Text letter animation - will be controlled by JS */
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: letter-fade-in 0.5s forwards;
+}
+
+@keyframes letter-fade-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* For mobile responsiveness */
 @media screen and (max-width: 768px) {
     .hero-content {
         margin: 0 auto;
         width: 90%;
+    }
+    
+    .hero-text-animated {
+        margin-left: 0;
+        padding: 2rem;
+        width: 90%;
+    }
+    
+    .animated-title {
+        font-size: 2.5rem;
     }
 }
