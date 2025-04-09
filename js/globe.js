@@ -60,28 +60,28 @@ function initGlobeAnimation() {
     minWidth: 200.00,
     scale: 1.00,
     scaleMobile: 1.00,
-    color: 0x10b981, // Changed to emerald green
-    backgroundColor: 0x0a0a0a,
-    size: 1.20,
-    speed: 0.8,
-    points: 0,
-    maxDistance: 0,
-    spacing: 0
-  });
+    color: 0xff0035, // The color you want (currently red)
+    backgroundColor: 0x111115,
+    size: 1.00,
+    speed: 1.50,
+    points: 0, // Remove the stars (points)
+    maxDistance: 0, // Remove the dots inside the globe
+});
+
 
   // Scroll-based interactivity
   window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-    const homeSection = document.getElementById('home');
-    const homeSectionHeight = homeSection.offsetHeight;
-    
-    if (scrollPosition <= homeSectionHeight && vantaEffect) {
-      const speedFactor = 1 - (scrollPosition / (homeSectionHeight * 1.2));
-      vantaEffect.setOptions({
-        speed: Math.max(0.3, speedFactor * 1.0),
-        size: 1.20 + (scrollPosition / homeSectionHeight * 0.2)
-      });
-    }
+      const scrollPosition = window.scrollY;
+      const homeSection = document.getElementById('home');
+      const homeSectionHeight = homeSection.offsetHeight;
+      
+      if (scrollPosition <= homeSectionHeight && vantaEffect) {
+          const speedFactor = 1 - (scrollPosition / (homeSectionHeight * 1.2));
+          vantaEffect.setOptions({
+              speed: Math.max(0.3, speedFactor * 1.0),
+              size: 1.20 + (scrollPosition / homeSectionHeight * 0.2)
+          });
+      }
   });
 }
 
