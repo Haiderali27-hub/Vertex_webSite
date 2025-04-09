@@ -216,7 +216,9 @@ nav {
     padding-top: 8rem;
     overflow: hidden;
     position: relative;
-    white-space: nowrap;
+    
+    
+    
 }
 
 .hero::before {
@@ -237,7 +239,7 @@ nav {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     line-height: 1.2;
     margin-bottom: 1.5rem;
     position: relative;
