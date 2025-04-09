@@ -1,6 +1,10 @@
-// Custom Cursor JS
+// Custom Cursor JS - DISABLED
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Custom cursor functionality disabled
+    
+    // Original code commented out below
+    /*
     const cursor = document.querySelector('.cursor');
     const cursorFollower = document.querySelector('.cursor-follower');
     
@@ -89,4 +93,5 @@ document.addEventListener('DOMContentLoaded', () => {
         cursor.style.opacity = '1';
         cursorFollower.style.opacity = '1';
     });
-}); 
+    */
+});
