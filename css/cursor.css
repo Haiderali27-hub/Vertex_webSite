@@ -1,6 +1,7 @@
-/* Custom Cursor */
+/* Custom Cursor - DISABLED */
 .cursor,
 .cursor-follower {
+    /* 
     position: fixed;
     pointer-events: none;
     z-index: 9999;
@@ -8,9 +9,12 @@
     transform: translate(-50%, -50%);
     transition: opacity 0.3s ease;
     mix-blend-mode: difference;
+    */
+    display: none; /* Hide cursor elements */
 }
 
 .cursor {
+    /* 
     width: 10px;
     height: 10px;
     background-color: var(--primary-color);
@@ -20,9 +24,12 @@
         height 0.3s ease,
         background-color 0.3s ease,
         transform 0.01s linear;
+    */
+    display: none;
 }
 
 .cursor-follower {
+    /* 
     width: 30px;
     height: 30px;
     border: 2px solid var(--primary-color);
@@ -32,15 +39,20 @@
         height 0.5s cubic-bezier(0.19, 1, 0.22, 1),
         border-color 0.3s ease,
         transform 0.15s ease;
+    */
+    display: none;
 }
 
-/* Cursor States */
+/* Cursor States - DISABLED */
+/* 
 body:hover .cursor,
 body:hover .cursor-follower {
     opacity: 1;
 }
+*/
 
-/* Link hover effect */
+/* Link hover effect - DISABLED */
+/* 
 a:hover ~ .cursor,
 button:hover ~ .cursor,
 .btn:hover ~ .cursor,
@@ -63,8 +75,10 @@ button:hover ~ .cursor-follower,
     border-color: var(--primary-color);
     background-color: rgba(255, 0, 53, 0.1);
 }
+*/
 
-/* Input focus effect */
+/* Input focus effect - DISABLED */
+/* 
 input:focus ~ .cursor,
 textarea:focus ~ .cursor {
     width: 5px;
@@ -76,8 +90,9 @@ input:focus ~ .cursor-follower,
 textarea:focus ~ .cursor-follower {
     opacity: 0;
 }
+*/
 
-/* Hide default cursor */
+/* Hide default cursor - RESET TO DEFAULT */
 html, 
 body, 
 a, 
@@ -91,7 +106,7 @@ textarea,
 .nav-link,
 .menu-toggle,
 .project-link {
-    cursor: none !important;
+    cursor: auto !important; /* Reset to default cursor */
 }
 
 /* Mobile devices - revert to default cursor */
@@ -104,4 +119,4 @@ textarea,
     html, body, a, button, input, textarea, .btn {
         cursor: auto !important;
     }
-} 
+}

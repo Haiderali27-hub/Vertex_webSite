@@ -216,6 +216,7 @@ nav {
     padding-top: 8rem;
     overflow: hidden;
     position: relative;
+    white-space: nowrap;
 }
 
 .hero::before {

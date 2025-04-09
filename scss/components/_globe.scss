@@ -1,0 +1,19 @@
+// ...existing code...
+
+.globe {
+  // ...existing code...
+  
+  .globe-points {
+    stroke: $globe-color; // Use the updated variable
+    // ...existing code...
+  }
+  
+  .globe-connections {
+    stroke: $globe-highlight; // Use the updated variable
+    // ...existing code...
+  }
+  
+  // ...existing code...
+}
+
+// ...existing code...
