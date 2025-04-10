@@ -878,7 +878,9 @@ nav {
 /* Projects & Contact Section Headings Fix */
 .projects .section-title,
 .contact .section-title,
-.enhanced-services .section-title {
+.enhanced-services .section-title,
+.team .section-title,
+.about .section-title {
     position: relative;
     text-align: center;
     margin: 0 auto 4rem;
@@ -890,7 +892,9 @@ nav {
 
 .projects .section-title::after,
 .contact .section-title::after,
-.enhanced-services .section-title::after {
+.enhanced-services .section-title::after,
+.team .section-title::after,
+.about .section-title::after {
     content: '';
     position: absolute;
     width: 50px;
@@ -1646,7 +1650,7 @@ footer {
 
 .modal-social-link:hover {
     background-color: var(--primary-color);
-    color: var(--text-color);
+    color: var (--text-color);
     transform: translateY(-3px);
 }
 
