@@ -9,11 +9,856 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/globe.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/service-pages.css">
+    <style>
+        /* Hero section styling - Updated */
+        .inner-page-hero {
+            position: relative;
+            min-height: 90vh;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Softer hero content styling */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 4rem;
+            background: rgba(15, 15, 15, 0.85);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(0);
+            opacity: 1;
+            animation: gentleFadeIn 1.5s ease-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        @keyframes gentleFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Improved animated title */
+        .animated-title {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: titleReveal 1.2s ease-out;
+            text-align: center;
+            width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            background: linear-gradient(45deg, #fff, #ff0035);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes titleReveal {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated-subtitle {
+            font-size: 1.5rem;
+            color: #b0b0b0;
+            line-height: 1.6;
+            animation: subtitleFade 1.2s ease-out 0.3s both;
+        }
+
+        @keyframes subtitleFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Add background pattern */
+        .background-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Enhanced hero content */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 3rem;
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Enhanced container and section styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Section styling - Updated */
+        .web-dev-section {
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+        }
+
+        .web-dev-section:nth-child(even) {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+        }
+
+        /* Enhanced section titles */
+        .section-title {
+            font-size: 3.2rem;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 2rem;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #b0b0b0;
+            font-size: 1.3rem;
+            margin-bottom: 5rem;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        /* Tech stack enhancements */
+        .tech-stack {
+            margin-top: 4rem;
+        }
+
+        .tech-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            padding: 2rem;
+        }
+
+        .tech-category {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .tech-category:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 0, 53, 0.15);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .tech-category h4 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .tech-category h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .tech-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tech-list li {
+            padding: 0.8rem 0;
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .tech-list li i {
+            color: #ff0035;
+            margin-right: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .tech-list li:hover i {
+            transform: scale(1.2);
+        }
+
+        /* Process steps styling - Updated */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 2rem;
+        }
+
+        .process-step {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 0, 53, 0.1);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .step-number {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            opacity: 0.8;
+        }
+
+        .step-content h3 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-content p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* Security section with improved styling to match reference image */
+        .security-methodology {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            width: 100%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .security-step {
+            background: rgba(30, 30, 30, 0.9);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(50, 50, 50, 0.6);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .security-step .step-icon {
+            background-color: #ff0035;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 20px rgba(255, 0, 53, 0.3);
+        }
+
+        .security-step .step-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .security-step .step-content h4 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .security-step .step-content p {
+            color: #b0b0b0;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .security-step:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 0, 53, 0.15);
+            background: rgba(35, 35, 35, 0.95);
+        }
+
+        /* Fix for the section titles to properly center them */
+        #web-dev-process .section-title,
+        #web-security .section-title {
+            font-size: 4rem;
+            background: linear-gradient(45deg, #fff, #ff0035);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            position: relative;
+            margin: 0 auto 3rem;
+            display: block;
+            transform: none;
+            left: auto;
+            width: auto;
+            padding-bottom: 2rem;
+        }
+
+        #web-dev-process .section-title::after,
+        #web-security .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ff0035, transparent);
+            border-radius: 2px;
+        }
+
+        #web-security {
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+        }
+
+        .security-content h3 {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #fff, #ff0035);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            display: block;
+            width: 100%;
+            padding-bottom: 0.5rem;
+        }
+
+        @media (max-width: 1200px) {
+            .security-methodology {
+                grid-template-columns: repeat(3, 1fr);
+                padding: 0 2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .security-methodology {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .security-step {
+                padding: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 3rem;
+                padding: 0 1rem;
+            }
+
+            .web-dev-section {
+                padding: 6rem 0;
+            }
+
+            .process-steps,
+            .security-methodology,
+            .tech-categories {
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .process-step,
+            .security-step {
+                padding: 2rem;
+            }
+
+            .step-number {
+                font-size: 2.5rem;
+            }
+
+            .step-content h3 {
+                font-size: 1.6rem;
+            }
+
+            .security-content h3,
+            .tech-stack h3 {
+                font-size: 2rem;
+            }
+
+            #web-dev-overview .section-title,
+            #web-dev-process .section-title,
+            #web-security .section-title,
+            .security-content h3 {
+                font-size: 2.8rem;
+            }
+            
+            .tech-categories,
+            .security-methodology {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+        }
+
+        /* Modern Web Development section with enhanced styling */
+        #web-dev-overview {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #web-dev-overview .section-title {
+            font-size: 4rem;
+            background: linear-gradient(45deg, #fff, #ff0035);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            animation: titlePulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes titlePulse {
+            0% {
+                transform: scale(1);
+                text-shadow: 0 0 10px rgba(255, 0, 53, 0.5);
+            }
+            100% {
+                transform: scale(1.05);
+                text-shadow: 0 0 20px rgba(255, 0, 53, 0.8);
+            }
+        }
+
+        /* Technology Stack section with fixed 3-column layout */
+        .tech-stack {
+            margin-top: 4rem;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tech-stack h3 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .tech-categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 2rem;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .tech-category {
+            background: rgba(30, 30, 30, 0.9);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(50, 50, 50, 0.6);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            animation: fadeInScale 0.8s ease-out;
+            transform-origin: center;
+        }
+
+        .tech-category:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 0, 53, 0.15);
+            background: rgba(35, 35, 35, 0.95);
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Process steps styling with better centering */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 4rem auto 0;
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 2rem;
+        }
+
+        /* Container styles to ensure proper centering */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Security container fixes */
+        .security-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .security-content {
+            margin-bottom: 3rem;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .security-content p {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Security features grid */
+        .security-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            width: 100%;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+
+        .security-feature-card {
+            background: rgba(30, 30, 30, 0.9);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(50, 50, 50, 0.6);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .security-feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 0, 53, 0.15);
+            background: rgba(35, 35, 35, 0.95);
+        }
+
+        .security-feature-card i {
+            font-size: 2.5rem;
+            color: #ff0035;
+            margin-bottom: 1.5rem;
+        }
+
+        .security-feature-card h4 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .security-feature-card p {
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 992px) {
+            .tech-categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tech-categories {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            
+            #web-dev-overview .section-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        /* Improved web-dev-content styling with centered text */
+        .web-dev-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .web-dev-text {
+            background: rgba(30, 30, 30, 0.9);
+            padding: 3.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 0, 53, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            animation: fadeInUp 1s ease-out;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .web-dev-text::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 0, 53, 0.05), transparent);
+            transform: translateX(-100%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .web-dev-text p {
+            color: #e0e0e0;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Web development animated background */
+        .web-bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            opacity: 0.08;
+        }
+
+        .code-lines {
+            position: absolute;
+            font-family: monospace;
+            color: #ff0035;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: codeFall 15s linear infinite;
+        }
+
+        @keyframes codeFall {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+
+        @keyframes codeTyping {
+            0% { width: 0; }
+            50% { width: 100%; }
+            100% { width: 0; }
+        }
+
+        .hero-bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.1;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff0035, transparent);
+            filter: blur(20px);
+            animation: float 20s infinite alternate ease-in-out;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(100px, 50px) rotate(180deg); }
+            100% { transform: translate(-100px, -50px) rotate(360deg); }
+        }
+
+        /* Fix the "Modern Web Development" title alignment */
+        #web-dev-overview.web-dev-section {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+            text-align: center;
+        }
+
+        #web-dev-overview .section-title {
+            font-size: 5rem;
+            text-align: center;
+            margin-right: 0;
+            margin-left: 0;
+            width: 100%;
+            animation: titlePulse 2s ease-in-out infinite alternate;
+        }
+
+        #web-dev-overview .section-subtitle {
+            text-align: center;
+            margin-right: 0;
+            margin-left: 0;
+            width: 100%;
+        }
+
+        /* Add an animated underline for emphasis */
+        #web-dev-overview .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ff0035, transparent);
+            animation: underlinePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes underlinePulse {
+            0% { width: 0; opacity: 0; }
+            50% { width: 200px; opacity: 1; }
+            100% { width: 0; opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            #web-dev-overview .section-title {
+                font-size: 3.5rem;
+                margin-right: 0;
+                text-align: center;
+            }
+            
+            #web-dev-overview .section-subtitle {
+                margin-right: 0;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
     <div class="animated-background"></div>
+    <div class="page-loader">
+        <div class="loader-icon"></div>
+    </div>
 
     <header>
         <nav>
@@ -37,17 +882,33 @@
 
     <main>
         <section id="web-dev-hero" class="hero inner-page-hero">
+            <div class="hero-bg-animation">
+                <div class="floating-shape" style="width: 300px; height: 300px; top: 10%; left: 10%;"></div>
+                <div class="floating-shape" style="width: 200px; height: 200px; top: 50%; right: 15%; animation-delay: 2s;"></div>
+                <div class="floating-shape" style="width: 150px; height: 150px; bottom: 20%; left: 25%; animation-delay: 5s;"></div>
+            </div>
             <div class="hero-content">
-                <h1 class="animated-title">Web Development Excellence</h1>    
-                <p class="subtitle animated-subtitle">Creating powerful, scalable, and secure web solutions</p>
+                <h1 class="animated-title" style="text-align: center; width: 100%; margin: 0 auto;">Modern Web Development</h1>    
+                <p class="animated-subtitle" style="text-align: center; width: 100%;">Transforming ideas into high-performance digital experiences</p>
             </div>
         </section>
 
         <section id="web-dev-overview" class="web-dev-section">
+            <div class="web-bg-animation">
+                <div class="code-lines" style="top: 10%; left: 5%; animation-duration: 20s;">
+                    &lt;div class="container"&gt;&lt;header&gt;&lt;nav&gt;&lt;ul&gt;&lt;li&gt;Home&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;/header&gt;
+                </div>
+                <div class="code-lines" style="top: 25%; left: 15%; animation-duration: 15s; animation-delay: 2s;">
+                    const app = () => { return &lt;Component /&gt;; }; ReactDOM.render(app, root);
+                </div>
+                <div class="code-lines" style="top: 50%; left: 10%; animation-duration: 18s; animation-delay: 5s;">
+                    .container { display: flex; justify-content: center; align-items: center; }
+                </div>
+                <div class="code-lines" style="top: 70%; left: 20%; animation-duration: 22s; animation-delay: 3s;">
+                    fetch('/api/data').then(response => response.json()).then(data => console.log(data));
+                </div>
+            </div>
             <div class="container">
-                <h2 class="section-title">Modern Web Development</h2>
-                <p class="section-subtitle fade-in">Transforming ideas into high-performance digital experiences</p>
-                
                 <div class="web-dev-content">
                     <div class="web-dev-text fade-in">
                         <p>At Vertex Solutions, we specialize in delivering cutting-edge web development services that combine stunning design with robust functionality. Our development team creates custom web solutions that are not only visually impressive but also technically sound and secure.</p>
@@ -345,6 +1206,18 @@
                         behavior: 'smooth'
                     });
                 });
+            }
+
+            // Add page loader
+            const loader = document.querySelector('.page-loader');
+            setTimeout(() => {
+                loader.classList.add('fade-out');
+            }, 500);
+
+            // Initialize background pattern animation
+            const pattern = document.querySelector('.background-pattern');
+            if (pattern) {
+                pattern.style.animation = 'patternMove 30s linear infinite';
             }
         });
     </script>
