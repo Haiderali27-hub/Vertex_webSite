@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Solutions | Vertex Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Cloud Solutions Page Specific Styles */
+        :root {
+            --cloud-primary: #4a6fa5;
+            --cloud-secondary: #3a568c;
+            --cloud-accent: #6789c0;
+            --cloud-gradient-start: #4a6fa5;
+            --cloud-gradient-end: #3a568c;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--cloud-gradient-start), var(--cloud-gradient-end));
+        }
+
+        .service-card:hover {
+            border-color: var(--cloud-accent);
+            box-shadow: 0 10px 30px rgba(74, 111, 165, 0.2);
+        }
+
+        .enhanced-service-card {
+            border-left: 4px solid var(--cloud-primary);
+        }
+
+        .enhanced-service-card:hover {
+            border-color: var(--cloud-accent);
+        }
+
+        .process-step:hover .step-number {
+            background: var(--cloud-primary);
+        }
+
+        .tech-card:hover {
+            border-color: var(--cloud-primary);
+            box-shadow: 0 10px 20px rgba(74, 111, 165, 0.15);
+        }
+
+        .security-title {
+            color: var(--cloud-primary);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--cloud-gradient-start), var(--cloud-gradient-end));
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/vertex-logo.png" alt="Vertex Solutions Logo">
+                    <span>Vertex Solutions</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="services-dropdown">
+                        <a href="#" class="active">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="web-development.html">Web Development</a></li>
+                            <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                            <li><a href="cloud-solutions.html" class="active">Cloud Solutions</a></li>
+                            <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                            <li><a href="ai-services.html">AI & Machine Learning</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="mobile-dropdown">
+                <a href="#" class="active">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="web-development.html">Web Development</a></li>
+                    <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                    <li><a href="cloud-solutions.html" class="active">Cloud Solutions</a></li>
+                    <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                    <li><a href="ai-services.html">AI & Machine Learning</a></li>
+                </ul>
+            </li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">Cloud Solutions</h1>
+                <p class="fade-in">Scalable, secure, and cost-effective cloud infrastructure to power your business.</p>
+                <div class="hero-cta fade-in">
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                    <a href="#services" class="btn btn-secondary">Explore Services</a>
+                </div>
+            </div>
+            <div class="hero-image fade-in">
+                <img src="img/cloud-solutions-hero.png" alt="Cloud Services Illustration">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Our Cloud Services</h2>
+                <p class="section-description">Comprehensive cloud solutions designed to optimize your business operations and drive innovation.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Migration</h3>
+                        <p>Seamlessly transition your existing infrastructure and applications to the cloud with our proven migration methodology.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Application assessment and migration planning</li>
+                            <li><i class="fas fa-check"></i> Lift and shift, re-platform, or re-architect approaches</li>
+                            <li><i class="fas fa-check"></i> Minimal downtime and business disruption</li>
+                            <li><i class="fas fa-check"></i> Post-migration optimization and support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3>Infrastructure as a Service (IaaS)</h3>
+                        <p>Leverage our flexible cloud infrastructure solutions to reduce capital expenses and increase operational efficiency.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Virtual machines and compute resources</li>
+                            <li><i class="fas fa-check"></i> Storage and networking solutions</li>
+                            <li><i class="fas fa-check"></i> Scalable resources that grow with your needs</li>
+                            <li><i class="fas fa-check"></i> Pay-as-you-go pricing models</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Platform as a Service (PaaS)</h3>
+                        <p>Focus on your application development while we manage the underlying infrastructure and platform services.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Application hosting environments</li>
+                            <li><i class="fas fa-check"></i> Database management services</li>
+                            <li><i class="fas fa-check"></i> Development frameworks and tools</li>
+                            <li><i class="fas fa-check"></i> Simplified deployment and scaling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Services Section -->
+        <section class="enhanced-services">
+            <div class="container">
+                <h2 class="section-title">Advanced Cloud Solutions</h2>
+                <p class="section-description">Enterprise-grade cloud services tailored for businesses seeking cutting-edge technology advantages.</p>
+                
+                <div class="enhanced-services-grid">
+                    <div class="enhanced-service-card fade-in">
+                        <div class="enhanced-service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="enhanced-service-content">
+                            <h3>Cloud Database Solutions</h3>
+                            <p>Highly available, scalable, and secure database services optimized for your specific workloads.</p>
+                            <ul class="enhanced-service-features">
+                                <li><i class="fas fa-check-circle"></i> SQL and NoSQL database options</li>
+                                <li><i class="fas fa-check-circle"></i> Automated backups and point-in-time recovery</li>
+                                <li><i class="fas fa-check-circle"></i> High-performance with read replicas</li>
+                                <li><i class="fas fa-check-circle"></i> Data encryption at rest and in transit</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="enhanced-service-card fade-in">
+                        <div class="enhanced-service-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="enhanced-service-content">
+                            <h3>Hybrid Cloud Infrastructure</h3>
+                            <p>Seamlessly integrate your on-premises systems with cloud resources for maximum flexibility and control.</p>
+                            <ul class="enhanced-service-features">
+                                <li><i class="fas fa-check-circle"></i> Unified management across environments</li>
+                                <li><i class="fas fa-check-circle"></i> Secure connectivity and data transfer</li>
+                                <li><i class="fas fa-check-circle"></i> Workload optimization and placement</li>
+                                <li><i class="fas fa-check-circle"></i> Disaster recovery and business continuity</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="enhanced-service-card fade-in">
+                        <div class="enhanced-service-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div class="enhanced-service-content">
+                            <h3>DevOps & CI/CD Pipelines</h3>
+                            <p>Accelerate application delivery with automated deployment pipelines and cloud-native development practices.</p>
+                            <ul class="enhanced-service-features">
+                                <li><i class="fas fa-check-circle"></i> Continuous integration and delivery</li>
+                                <li><i class="fas fa-check-circle"></i> Infrastructure as code (IaC)</li>
+                                <li><i class="fas fa-check-circle"></i> Container orchestration with Kubernetes</li>
+                                <li><i class="fas fa-check-circle"></i> Automated testing and quality assurance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="enhanced-service-card fade-in">
+                        <div class="enhanced-service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="enhanced-service-content">
+                            <h3>Cloud Analytics & Data Lakes</h3>
+                            <p>Transform your data into actionable insights with powerful cloud-based analytics platforms.</p>
+                            <ul class="enhanced-service-features">
+                                <li><i class="fas fa-check-circle"></i> Big data processing at scale</li>
+                                <li><i class="fas fa-check-circle"></i> Real-time analytics and dashboards</li>
+                                <li><i class="fas fa-check-circle"></i> Data warehouse solutions</li>
+                                <li><i class="fas fa-check-circle"></i> Machine learning integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process">
+            <div class="container">
+                <h2 class="section-title">Our Cloud Implementation Process</h2>
+                <p class="section-description">A methodical approach ensuring successful cloud adoption tailored to your business needs.</p>
+                
+                <div class="process-steps">
+                    <div class="process-step fade-in">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Discovery & Assessment</h3>
+                            <p>We analyze your current infrastructure, applications, and business requirements to create a comprehensive cloud adoption strategy.</p>
+                            <ul class="step-details">
+                                <li>Infrastructure assessment</li>
+                                <li>Application portfolio analysis</li>
+                                <li>Workload profiling</li>
+                                <li>Cost-benefit analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step fade-in">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Solution Design</h3>
+                            <p>Our architects design a cloud solution that aligns with your business goals, compliance requirements, and performance needs.</p>
+                            <ul class="step-details">
+                                <li>Cloud architecture blueprint</li>
+                                <li>Security and compliance planning</li>
+                                <li>Network design</li>
+                                <li>Disaster recovery strategy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step fade-in">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Migration & Implementation</h3>
+                            <p>We execute the cloud migration following best practices to minimize disruption and ensure data integrity.</p>
+                            <ul class="step-details">
+                                <li>Pilot migration</li>
+                                <li>Data migration</li>
+                                <li>Application deployment</li>
+                                <li>Testing and validation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step fade-in">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Optimization & Management</h3>
+                            <p>We continuously monitor and optimize your cloud environment to ensure peak performance, security, and cost-efficiency.</p>
+                            <ul class="step-details">
+                                <li>Performance monitoring</li>
+                                <li>Cost optimization</li>
+                                <li>Security posture management</li>
+                                <li>Continuous improvement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section class="tech-stack">
+            <div class="container">
+                <h2 class="section-title">Cloud Technologies We Use</h2>
+                <p class="section-description">We leverage industry-leading cloud platforms and technologies to deliver robust, scalable solutions.</p>
+                
+                <div class="tech-grid">
+                    <div class="tech-card fade-in">
+                        <img src="img/aws-logo.png" alt="AWS">
+                        <h3>Amazon Web Services</h3>
+                        <p>Comprehensive suite of cloud services including EC2, S3, RDS, Lambda, and more.</p>
+                    </div>
+                    
+                    <div class="tech-card fade-in">
+                        <img src="img/azure-logo.png" alt="Microsoft Azure">
+                        <h3>Microsoft Azure</h3>
+                        <p>Integrated cloud services with Azure VMs, App Service, SQL Database, and Azure DevOps.</p>
+                    </div>
+                    
+                    <div class="tech-card fade-in">
+                        <img src="img/gcp-logo.png" alt="Google Cloud Platform">
+                        <h3>Google Cloud Platform</h3>
+                        <p>Powerful cloud services including Compute Engine, Cloud Storage, BigQuery, and Kubernetes Engine.</p>
+                    </div>
+                    
+                    <div class="tech-card fade-in">
+                        <img src="img/kubernetes-logo.png" alt="Kubernetes">
+                        <h3>Kubernetes</h3>
+                        <p>Container orchestration for automated deployment, scaling, and management of containerized applications.</p>
+                    </div>
+                    
+                    <div class="tech-card fade-in">
+                        <img src="img/terraform-logo.png" alt="Terraform">
+                        <h3>Terraform</h3>
+                        <p>Infrastructure as code tool for building, changing, and versioning infrastructure safely and efficiently.</p>
+                    </div>
+                    
+                    <div class="tech-card fade-in">
+                        <img src="img/docker-logo.png" alt="Docker">
+                        <h3>Docker</h3>
+                        <p>Containerization platform for building, shipping, and running applications consistently across environments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Section -->
+        <section class="security">
+            <div class="container">
+                <h2 class="section-title">Cloud Security & Compliance</h2>
+                <p class="section-description">We implement comprehensive security measures to protect your cloud infrastructure and data.</p>
+                
+                <div class="security-grid">
+                    <div class="security-feature fade-in">
+                        <div class="security-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="security-content">
+                            <h3 class="security-title">Identity & Access Management</h3>
+                            <p>Robust authentication, authorization, and accounting systems to ensure only authorized users access your cloud resources.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="security-feature fade-in">
+                        <div class="security-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="security-content">
+                            <h3 class="security-title">Data Encryption</h3>
+                            <p>End-to-end encryption for data at rest and in transit to safeguard sensitive information from unauthorized access.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="security-feature fade-in">
+                        <div class="security-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="security-content">
+                            <h3 class="security-title">Continuous Monitoring</h3>
+                            <p>Real-time threat detection and incident response to identify and address security issues promptly.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="security-feature fade-in">
+                        <div class="security-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <div class="security-content">
+                            <h3 class="security-title">Compliance</h3>
+                            <p>Cloud environments designed to meet industry-specific compliance requirements including GDPR, HIPAA, and PCI DSS.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="cta-section">
+            <div class="container">
+                <h2 class="section-title">Ready to Transform Your Business with Cloud Technology?</h2>
+                <p class="section-description">Let's discuss how our cloud solutions can help your organization innovate faster and operate more efficiently.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-light">Schedule a Consultation</a>
+                    <a href="case-studies.html" class="btn btn-outline">View Success Stories</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="img/vertex-logo-white.png" alt="Vertex Solutions Logo">
+                    <p>Providing innovative technology solutions to drive business success.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                        <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
+                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="ai-services.html">AI & Machine Learning</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Silicon Valley, CA 94043</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@vertexsolutions.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Vertex Solutions. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="sitemap.html">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        fadeInObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+            
+            // Mobile menu functionality
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+            
+            // Dropdown functionality for mobile
+            const mobileDropdown = document.querySelector('.mobile-dropdown > a');
+            const mobileDropdownMenu = document.querySelector('.mobile-dropdown-menu');
+            
+            if (mobileDropdown) {
+                mobileDropdown.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    mobileDropdownMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

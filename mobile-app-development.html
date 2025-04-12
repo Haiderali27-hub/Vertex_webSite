@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android App Development Services | Vertex Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/service-pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Mobile App Development Page Specific Styles */
+        :root {
+            --android-primary: #3ddc84;
+            --android-secondary: #4285f4;
+            --android-accent: #073042;
+            --android-dark: #073042;
+        }
+        
+        /* Hero section styling */
+        .inner-page-hero {
+            position: relative;
+            min-height: 90vh;
+            background: linear-gradient(135deg, #073042, #121212);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Split layout for content + phone mockup */
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .content-heading {
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .content-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--android-primary), transparent);
+        }
+        
+        .cta-mini {
+            margin-top: 2rem;
+        }
+        
+        /* Interactive Phone Mockup */
+        .interactive-phone-mockup {
+            width: 100%;
+            max-width: 400px;
+            height: 600px;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .phone-frame {
+            width: 280px;
+            height: 560px;
+            background-color: #121212;
+            border-radius: 30px;
+            border: 8px solid #333;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .android-app {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .app-header {
+            height: 60px;
+            background-color: var(--android-primary);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .app-title {
+            color: var(--android-dark);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .app-content {
+            height: calc(100% - 110px);
+            background-color: #f5f5f5;
+            overflow-y: auto;
+            padding: 16px;
+        }
+        
+        .app-navbar {
+            height: 50px;
+            background-color: #fff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-item {
+            color: #757575;
+            font-size: 1.1rem;
+            padding: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item.active {
+            color: var(--android-primary);
+        }
+        
+        .android-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .android-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .android-card h3 {
+            color: var(--android-dark);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .android-card p {
+            color: #757575;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .android-button {
+            background-color: var(--android-primary);
+            color: var(--android-dark);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .android-button:hover {
+            background-color: var(--android-secondary);
+            color: #fff;
+        }
+        
+        /* Section styling */
+        .mobile-dev-section {
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+        }
+        
+        .mobile-dev-section:nth-child(even) {
+            background: linear-gradient(135deg, #1a1a1a 0%, #121212 100%);
+        }
+        
+        /* Enhanced section titles */
+        .section-title {
+            font-size: 3.2rem;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 2rem;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--android-primary), transparent);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #b0b0b0;
+            font-size: 1.3rem;
+            margin-bottom: 5rem;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+        
+        /* Android features grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(61, 220, 132, 0.15);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(61, 220, 132, 0.3);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(61, 220, 132, 0.1);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--android-primary);
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            background: var(--android-primary);
+            color: var(--android-dark);
+            transform: scale(1.1);
+        }
+        
+        .feature-card h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: #b0b0b0;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
+    
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/vertex-logo.svg" alt="Vertex Solutions Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="has-dropdown">
+                        <a href="#" class="active">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="web-development.html">Web Development</a></li>
+                            <li><a href="mobile-app-development.html" class="active">Android Development</a></li>
+                            <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
+                            <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                            <li><a href="ai-solutions.html">AI Solutions</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Phone Mockup -->
+    <section id="android-dev-hero" class="hero inner-page-hero">
+        <div class="container">
+            <div class="split-layout">
+                <div class="hero-content">
+                    <h1 class="content-heading">Android App Development</h1>
+                    <p class="hero-text">We create innovative, high-performance Android applications that delight users and drive business growth. Our expert team leverages the latest Android technologies and best practices to deliver exceptional mobile experiences.</p>
+                    <div class="cta-mini">
+                        <a href="#contact" class="btn btn-primary">Get Started</a>
+                        <a href="#process" class="btn btn-secondary">Our Process</a>
+                    </div>
+                </div>
+                <div class="interactive-phone-mockup">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <div class="android-app">
+                                <div class="app-header">
+                                    <div class="app-title">Vertex App</div>
+                                </div>
+                                <div class="app-content">
+                                    <div class="android-card">
+                                        <h3>Welcome to Android Development</h3>
+                                        <p>Explore the possibilities of cutting-edge mobile applications tailored for your business.</p>
+                                        <button class="android-button">Learn More</button>
+                                    </div>
+                                    <div class="android-card">
+                                        <h3>Native Performance</h3>
+                                        <p>Build high-performance apps that utilize the full power of Android devices.</p>
+                                        <button class="android-button">Explore</button>
+                                    </div>
+                                    <div class="android-card">
+                                        <h3>Material Design</h3>
+                                        <p>Beautiful user interfaces following Google's design guidelines.</p>
+                                        <button class="android-button">View Samples</button>
+                                    </div>
+                                </div>
+                                <div class="app-navbar">
+                                    <div class="nav-item active"><i class="fas fa-home"></i></div>
+                                    <div class="nav-item"><i class="fas fa-search"></i></div>
+                                    <div class="nav-item"><i class="fas fa-heart"></i></div>
+                                    <div class="nav-item"><i class="fas fa-user"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Android Overview Section -->
+        <section id="android-dev-overview" class="mobile-dev-section">
+            <div class="container">
+                <h2 class="section-title">Android App Development</h2>
+                <p class="section-subtitle">We create custom Android applications that leverage the full potential of the platform to deliver exceptional user experiences.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fab fa-android"></i>
+                        </div>
+                        <h3>Native Android Development</h3>
+                        <p>Custom applications built with Kotlin and Java that utilize the full capabilities of Android devices while following Google's Material Design guidelines.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Optimized Performance</h3>
+                        <p>High-performance applications that start quickly, run smoothly, and efficiently use device resources to provide a seamless user experience.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tablet-alt"></i>
+                        </div>
+                        <h3>Multi-Device Support</h3>
+                        <p>Responsive applications that work flawlessly across various Android devices including phones, tablets, wearables, and Android TV.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h3>Advanced Integrations</h3>
+                        <p>Seamless integration with device features, third-party services, and APIs to create powerful, feature-rich applications that solve real-world problems.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>Beautiful UI/UX Design</h3>
+                        <p>Intuitive and engaging user interfaces that follow Material Design principles, ensuring a consistent and delightful user experience.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        <h3>Ongoing Support</h3>
+                        <p>Continuous maintenance, updates, and optimizations to ensure your Android application stays current with the latest platform features and security requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Android Technologies Section -->
+        <section id="android-technologies" class="mobile-dev-section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Android Development Technologies</h2>
+                <p class="section-subtitle">We leverage cutting-edge technologies and frameworks to build powerful, scalable Android applications that deliver exceptional user experiences across all device types.</p>
+                
+                <div class="tech-categories">
+                    <div class="tech-category">
+                        <h4>Programming Languages</h4>
+                        <ul class="tech-list">
+                            <li><i class="fas fa-check-circle"></i> Kotlin - Modern, concise and safe programming language officially endorsed by Google</li>
+                            <li><i class="fas fa-check-circle"></i> Java - Robust and widely supported language with extensive libraries</li>
+                            <li><i class="fas fa-check-circle"></i> C++ (NDK) - For performance-critical components and games</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4>Modern Architecture</h4>
+                        <ul class="tech-list">
+                            <li><i class="fas fa-check-circle"></i> MVVM (Model-View-ViewModel) - Clean separation of concerns</li>
+                            <li><i class="fas fa-check-circle"></i> Clean Architecture - Maintainable and testable code structure</li>
+                            <li><i class="fas fa-check-circle"></i> Repository Pattern - Centralized data management</li>
+                            <li><i class="fas fa-check-circle"></i> Dependency Injection - Modular, testable components</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4>UI Frameworks</h4>
+                        <ul class="tech-list">
+                            <li><i class="fas fa-check-circle"></i> Jetpack Compose - Modern declarative UI toolkit</li>
+                            <li><i class="fas fa-check-circle"></i> Material Design Components - Google's design system</li>
+                            <li><i class="fas fa-check-circle"></i> ConstraintLayout - Flexible and responsive layouts</li>
+                            <li><i class="fas fa-check-circle"></i> Motion Layout - Advanced animations and transitions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4>Android Jetpack</h4>
+                        <ul class="tech-list">
+                            <li><i class="fas fa-check-circle"></i> Navigation Component - Simplified app navigation</li>
+                            <li><i class="fas fa-check-circle"></i> LiveData and Flow - Lifecycle-aware data streams</li>
+                            <li><i class="fas fa-check-circle"></i> Room Database - SQLite abstraction layer</li>
+                            <li><i class="fas fa-check-circle"></i> WorkManager - Background processing</li>
+                            <li><i class="fas fa-check-circle"></i> ViewModel - UI state management</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4>Networking & Data</h4>
+                        <ul class="tech-list">
+                            <li><i class="fas fa-check-circle"></i> Retrofit - Type-safe REST API client</li>
+                            <li><i class="fas fa-check-circle"></i> OkHttp - Efficient HTTP client with caching</li>
+                            <li><i class="fas fa-check-circle"></i> Gson/Moshi - Fast JSON serialization/deserialization</li>
+                            <li><i class="fas fa-check-circle"></i> Coroutines - Simplified asynchronous programming</li>
+                            <li><i class="fas fa-check-circle"></i> RxJava - Reactive programming for event streams</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4>Testing & Quality</h4>
+                        <ul class="tech-list">
+                            <li><i class="fas fa-check-circle"></i> JUnit - Comprehensive unit testing framework</li>
+                            <li><i class="fas fa-check-circle"></i> Espresso - UI automation testing</li>
+                            <li><i class="fas fa-check-circle"></i> Mockito - Powerful mocking framework</li>
+                            <li><i class="fas fa-check-circle"></i> Firebase Test Lab - Device testing at scale</li>
+                            <li><i class="fas fa-check-circle"></i> CI/CD integration - Automated build and testing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Development Process Section -->
+        <section id="process" class="mobile-dev-section">
+            <div class="container">
+                <h2 class="section-title">Our Android Development Process</h2>
+                <p class="section-subtitle">A systematic approach to deliver high-quality Android applications that meet your business objectives.</p>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>Discovery & Planning</h3>
+                            <p>We begin by understanding your business requirements, target audience, and project goals. Our team analyzes competitors, identifies key features, and creates a detailed project roadmap.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>UI/UX Design</h3>
+                            <p>Our designers create wireframes and interactive prototypes that follow Material Design principles. We ensure intuitive navigation, engaging visuals, and a consistent user experience across all Android devices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>Development</h3>
+                            <p>Our Android developers write clean, maintainable code using Kotlin or Java, following modern architectural patterns. We implement features iteratively with regular client feedback and code reviews.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3>Testing & QA</h3>
+                            <p>Comprehensive testing across multiple devices, screen sizes, and Android versions. We perform functional testing, performance testing, security testing, and usability testing to ensure a flawless application.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">05</div>
+                        <div class="step-content">
+                            <h3>Deployment</h3>
+                            <p>We handle the Google Play Store submission process, ensuring compliance with all platform requirements. Our team also manages beta testing programs to gather early user feedback before full release.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">06</div>
+                        <div class="step-content">
+                            <h3>Post-Launch Support</h3>
+                            <p>Ongoing maintenance, performance monitoring, feature enhancements, and platform updates to keep your Android application running smoothly and securely over time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Android Security Section -->
+        <section id="android-security" class="mobile-dev-section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Android App Security</h2>
+                <p class="section-subtitle">We implement comprehensive security measures to protect your application and user data.</p>
+                
+                <div class="security-methodology">
+                    <div class="security-step">
+                        <div class="step-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Secure Authentication</h3>
+                        <p>Implementation of secure authentication mechanisms including biometric authentication, multi-factor authentication, and OAuth integrations.</p>
+                    </div>
+                    
+                    <div class="security-step">
+                        <div class="step-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Data Encryption</h3>
+                        <p>End-to-end encryption for sensitive data both at rest and in transit using Android Keystore system and modern cryptographic algorithms.</p>
+                    </div>
+                    
+                    <div class="security-step">
+                        <div class="step-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Secure Coding Practices</h3>
+                        <p>Following OWASP mobile security guidelines and Android security best practices to protect against common vulnerabilities.</p>
+                    </div>
+                    
+                    <div class="security-step">
+                        <div class="step-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Privacy Protection</h3>
+                        <p>Implementing privacy by design principles, minimizing data collection, and ensuring compliance with GDPR, CCPA, and other privacy regulations.</p>
+                    </div>
+                    
+                    <div class="security-step">
+                        <div class="step-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h3>Security Testing</h3>
+                        <p>Regular security audits, penetration testing, and vulnerability assessments to identify and address potential security issues before release.</p>
+                    </div>
+                    
+                    <div class="security-step">
+                        <div class="step-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Regular Updates</h3>
+                        <p>Proactive monitoring for security vulnerabilities and timely updates to address emerging threats and platform security changes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Advanced Features Section -->
+        <section id="advanced-features" class="mobile-dev-section">
+            <div class="container">
+                <h2 class="section-title">Advanced Android App Features</h2>
+                <p class="section-subtitle">Enhance your application with cutting-edge Android capabilities to provide exceptional user experiences.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                        <h3>AR & VR Integration</h3>
+                        <p>Immersive augmented reality and virtual reality experiences using ARCore to create interactive, engaging content for your users.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3>AI & Machine Learning</h3>
+                        <p>Integration of ML Kit and TensorFlow Lite to add intelligent features like image recognition, natural language processing, and predictive analytics.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3>Location & Maps</h3>
+                        <p>Advanced location-based services using Google Maps API, geofencing, and real-time location tracking for navigation and proximity features.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Offline Capabilities</h3>
+                        <p>Robust offline functionality allowing users to access content and perform actions even without an internet connection with seamless data synchronization.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Real-time Messaging</h3>
+                        <p>Integrate real-time chat, video calls, and push notifications using Firebase Cloud Messaging and WebRTC to enable instant communication.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3>Secure Payments</h3>
+                        <p>Integration of Google Pay, Stripe, PayPal, and other payment gateways to enable secure, frictionless in-app purchases and subscriptions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section id="android-dev-cta" class="mobile-dev-section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Ready to Build Your Android App?</h2>
+                <p class="section-subtitle">Let's discuss how we can bring your app idea to life with our expert Android development services.</p>
+                
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    <a href="portfolio.html" class="btn btn-secondary">View Our Work</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="img/vertex-logo-white.svg" alt="Vertex Solutions">
+                    <p>Building exceptional digital experiences with cutting-edge technology.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="mobile-app-development.html">Android Development</a></li>
+                        <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
+                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="ai-solutions.html">AI Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Silicon Valley, CA 94043</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@vertexsolutions.com</p>
+                    
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Vertex Solutions. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Animated phone mockup interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.app-navbar .nav-item');
+            
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    navItems.forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Android cards animation
+            const androidCards = document.querySelectorAll('.android-card');
+            
+            androidCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+            
+            // Simulate typing animation for a more interactive demo
+            const animateTyping = () => {
+                const cards = document.querySelectorAll('.android-card');
+                const messages = [
+                    'Building amazing Android apps...',
+                    'Optimizing performance...',
+                    'Implementing Material Design...',
+                    'Testing across devices...',
+                    'Ready for Google Play!'
+                ];
+                
+                let currentCard = 0;
+                let currentMessage = 0;
+                
+                setInterval(() => {
+                    const card = cards[currentCard];
+                    const message = messages[currentMessage];
+                    
+                    if (card && card.querySelector('p')) {
+                        card.querySelector('p').textContent = message;
+                    }
+                    
+                    currentMessage = (currentMessage + 1) % messages.length;
+                    if (currentMessage === 0) {
+                        currentCard = (currentCard + 1) % cards.length;
+                    }
+                }, 3000);
+            };
+            
+            animateTyping();
+        });
+    </script>
+</body>
+</html>

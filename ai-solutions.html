@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Solutions | Vertex Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* AI Solutions Page Specific Styles */
+        .hero {
+            background: linear-gradient(135deg, #3a1c71 0%, #d76d77 50%, #ffaf7b 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('img/ai-pattern.svg');
+            background-size: cover;
+            opacity: 0.1;
+        }
+        
+        .ai-case-studies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin: 4rem 0;
+        }
+        
+        .case-study-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .case-study-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        
+        .case-study-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .case-study-content {
+            padding: 1.8rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .case-study-results {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .result-stat {
+            text-align: center;
+        }
+        
+        .result-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #3a1c71;
+            margin-bottom: 0.5rem;
+        }
+        
+        .ai-models {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+            padding: 5rem 2rem;
+        }
+        
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .model-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .model-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #3a1c71, #d76d77, #ffaf7b);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+        
+        .model-card:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .model-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #3a1c71;
+            background: rgba(58, 28, 113, 0.1);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @media (max-width: 768px) {
+            .ai-case-studies {
+                grid-template-columns: 1fr;
+            }
+            
+            .model-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Vertex Solutions</a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="web-development.html">Web Development</a></li>
+                            <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                            <li><a href="ai-solutions.html" class="active">AI Solutions</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animated-title">AI Solutions</h1>
+                <p class="lead">Harness the power of artificial intelligence to transform your business with intelligent, data-driven solutions.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+                    <a href="#case-studies" class="btn btn-secondary">View Case Studies</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Services Section -->
+        <section class="services section-padding" id="services">
+            <div class="container">
+                <h2 class="section-title">Our AI Solutions</h2>
+                <p class="section-subtitle">Advanced artificial intelligence services to optimize operations and drive innovation</p>
+                
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Machine Learning</h3>
+                        <p>Custom ML models that extract patterns from your data to enhance decision-making and automation capabilities.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Natural Language Processing</h3>
+                        <p>Sophisticated text analysis solutions for understanding customer sentiment, extracting insights, and automating responses.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Computer Vision</h3>
+                        <p>Advanced image and video analysis to identify objects, detect anomalies, and extract valuable visual information.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Predictive Analytics</h3>
+                        <p>Forecast future trends and behaviors with AI-powered data analysis and predictive modeling.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Process Automation</h3>
+                        <p>Intelligent automation solutions that learn and adapt, streamlining workflows and reducing operational costs.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Conversational AI</h3>
+                        <p>Smart chatbots and virtual assistants that provide engaging, personalized customer interactions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Case Studies Section -->
+        <section class="enhanced-services section-padding" id="case-studies">
+            <div class="container">
+                <h2 class="section-title">AI Success Stories</h2>
+                <p class="section-subtitle">Real-world AI implementations that delivered tangible results</p>
+                
+                <div class="ai-case-studies">
+                    <div class="case-study-card">
+                        <img src="img/ai-case1.jpg" alt="Retail AI Implementation">
+                        <div class="case-study-content">
+                            <h3>Retail Inventory Optimization</h3>
+                            <p>We developed a predictive inventory system for a national retail chain that uses machine learning to forecast demand patterns, reducing stockouts and overstock situations.</p>
+                            <div class="case-study-results">
+                                <div class="result-stat">
+                                    <div class="result-number">42%</div>
+                                    <p>Reduction in stockouts</p>
+                                </div>
+                                <div class="result-stat">
+                                    <div class="result-number">28%</div>
+                                    <p>Inventory cost savings</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-card">
+                        <img src="img/ai-case2.jpg" alt="Healthcare AI Implementation">
+                        <div class="case-study-content">
+                            <h3>Medical Diagnostic Assistant</h3>
+                            <p>Our AI-powered diagnostic tool helps radiologists identify potential abnormalities in medical images, prioritizing cases and improving diagnostic accuracy.</p>
+                            <div class="case-study-results">
+                                <div class="result-stat">
+                                    <div class="result-number">93%</div>
+                                    <p>Detection accuracy</p>
+                                </div>
+                                <div class="result-stat">
+                                    <div class="result-number">35%</div>
+                                    <p>Faster diagnoses</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-card">
+                        <img src="img/ai-case3.jpg" alt="Financial AI Implementation">
+                        <div class="case-study-content">
+                            <h3>Fraud Detection System</h3>
+                            <p>We built an advanced fraud detection system for a financial institution that analyzes transaction patterns in real-time to identify suspicious activities.</p>
+                            <div class="case-study-results">
+                                <div class="result-stat">
+                                    <div class="result-number">62%</div>
+                                    <p>Increase in fraud detection</p>
+                                </div>
+                                <div class="result-stat">
+                                    <div class="result-number">$4.2M</div>
+                                    <p>Annual savings</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- AI Models Section -->
+        <section class="ai-models section-padding" id="models">
+            <div class="container">
+                <h2 class="section-title">Our AI Models & Frameworks</h2>
+                <p class="section-subtitle">State-of-the-art technologies that power our intelligent solutions</p>
+                
+                <div class="model-grid">
+                    <div class="model-card">
+                        <div class="model-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Deep Learning</h3>
+                        <p>Neural network architectures including CNN, RNN, LSTM, and Transformer models for complex pattern recognition.</p>
+                        <ul class="feature-list">
+                            <li>Image and speech recognition</li>
+                            <li>Natural language understanding</li>
+                            <li>Time series forecasting</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="model-card">
+                        <div class="model-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3>NLP Models</h3>
+                        <p>Advanced language models for text analysis, generation, and understanding human communication.</p>
+                        <ul class="feature-list">
+                            <li>Sentiment analysis</li>
+                            <li>Text classification</li>
+                            <li>Named entity recognition</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="model-card">
+                        <div class="model-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Predictive Models</h3>
+                        <p>Statistical and machine learning algorithms that forecast future outcomes based on historical data.</p>
+                        <ul class="feature-list">
+                            <li>Regression analysis</li>
+                            <li>Time series forecasting</li>
+                            <li>Anomaly detection</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="model-card">
+                        <div class="model-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>Decision Systems</h3>
+                        <p>AI-powered decision support systems that optimize outcomes across complex scenarios.</p>
+                        <ul class="feature-list">
+                            <li>Reinforcement learning</li>
+                            <li>Decision trees</li>
+                            <li>Bayesian networks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Implementation Process Section -->
+        <section class="process section-padding" id="process">
+            <div class="container">
+                <h2 class="section-title">Our AI Implementation Process</h2>
+                <p class="section-subtitle">A systematic approach to developing effective AI solutions</p>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Business Problem Analysis</h3>
+                            <p>We identify the specific business challenges that AI can address, defining clear objectives and success metrics.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Data Assessment</h3>
+                            <p>Evaluating available data sources, quality, and structure, then implementing data collection and preparation strategies.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Model Selection & Development</h3>
+                            <p>Choosing appropriate algorithms and frameworks, then building and training custom AI models tailored to your needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Testing & Validation</h3>
+                            <p>Rigorous testing of model performance, accuracy, and reliability across various scenarios and conditions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Deployment & Integration</h3>
+                            <p>Implementing the AI solution within your existing systems and workflows, ensuring seamless operation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h3>Monitoring & Improvement</h3>
+                            <p>Continuous monitoring of performance, with regular updates and optimizations to maintain accuracy over time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ethics Section -->
+        <section class="security section-padding" id="ethics">
+            <div class="container">
+                <h2 class="section-title">Responsible AI</h2>
+                <p class="section-subtitle">Our commitment to ethical artificial intelligence</p>
+                
+                <div class="security-features">
+                    <div class="security-feature">
+                        <div class="security-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="security-content">
+                            <h3>Fairness & Bias Mitigation</h3>
+                            <p>We actively identify and address potential biases in training data and model outcomes to ensure fair treatment of all users.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="security-feature">
+                        <div class="security-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="security-content">
+                            <h3>Privacy Protection</h3>
+                            <p>Implementing privacy-preserving techniques and secure data handling practices that safeguard sensitive information.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="security-feature">
+                        <div class="security-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="security-content">
+                            <h3>Transparency</h3>
+                            <p>Creating interpretable AI models with clear explanations of how decisions are made, avoiding "black box" solutions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="security-feature">
+                        <div class="security-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="security-content">
+                            <h3>Human Oversight</h3>
+                            <p>Ensuring appropriate human supervision and control over AI systems, especially for critical decision-making processes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta section-padding" id="contact">
+            <div class="container">
+                <h2 class="section-title">Ready to Transform Your Business with AI?</h2>
+                <p class="cta-text">Let's discuss how our AI solutions can address your specific challenges and drive innovation.</p>
+                <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vertex Solutions</h3>
+                    <p>Cutting-edge AI solutions that transform businesses and drive innovation.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                        <li><a href="ai-solutions.html">AI Solutions</a></li>
+                        <li><a href="#">Data Analytics</a></li>
+                        <li><a href="#">Cloud Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Suite 456, San Francisco, CA 94107</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@vertexsolutions.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Vertex Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+        
+        // Dropdown menu functionality
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.parentElement.classList.toggle('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        document.querySelector('.nav').classList.remove('active');
+                        document.querySelector('.menu-toggle').classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        // Intersection Observer for scroll animations
+        const animatedElements = document.querySelectorAll('.service-card, .process-step, .model-card, .case-study-card, .security-feature');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+        
+        // Initialize with animation classes
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.animated-title').classList.add('animate');
+            document.querySelector('.lead').classList.add('animate');
+            document.querySelector('.cta-buttons').classList.add('animate');
+            
+            // Animate stats numbers
+            const resultNumbers = document.querySelectorAll('.result-number');
+            resultNumbers.forEach(number => {
+                const targetValue = parseFloat(number.innerText);
+                let startValue = 0;
+                
+                if (number.innerText.includes('$')) {
+                    startValue = 0;
+                }
+                
+                const duration = 2000;
+                const stepTime = 50;
+                const steps = duration / stepTime;
+                const increment = targetValue / steps;
+                
+                let currentValue = startValue;
+                const format = number.innerText.includes('$') ? '$0.0M' : '0%';
+                number.innerText = format.replace('0', startValue);
+                
+                const interval = setInterval(() => {
+                    currentValue += increment;
+                    
+                    if (currentValue >= targetValue) {
+                        currentValue = targetValue;
+                        clearInterval(interval);
+                    }
+                    
+                    if (format.includes('$')) {
+                        number.innerText = '$' + currentValue.toFixed(1) + 'M';
+                    } else {
+                        number.innerText = Math.floor(currentValue) + '%';
+                    }
+                }, stepTime);
+            });
+        });
+    </script>
+</body>
+</html> 
