@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -213,7 +212,7 @@
                         <li><i class="fas fa-check"></i> Intuitive Interfaces</li>
                         <li><i class="fas fa-check"></i> Advanced Analytics</li>
                     </ul>
-                    <a href="#contact" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="/mobile-app-development.html" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
                 <div class="service-card-advanced fade-in">
@@ -299,72 +298,896 @@
 
         <section id="projects" class="projects">
             <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-showcase">
-                <div class="project-card">
-                    <div class="project-img"></div>
-                    <div class="project-info">
+            <div class="projects-container">
+                <div class="project-card-3d">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-thumbnail" style="background-image: url('src/images/projects/enterprise-system.jpg');"></div>
+                            <div class="project-overlay">
                         <h3>Enterprise Management System</h3>
-                        <p>Comprehensive solution for managing business operations.</p>
-                        <a href="#" class="project-link">View Case Study</a>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img"></div>
-                    <div class="project-info">
+                        <div class="project-card-back">
+                            <div class="project-details">
+                                <h3>Enterprise Management System</h3>
+                                <div class="project-tags">
+                                    <span>Web App</span>
+                                    <span>Dashboard</span>
+                                    <span>Analytics</span>
+                                </div>
+                                <p>Comprehensive solution for managing business operations with real-time analytics and reporting.</p>
+                                <div class="project-tech">
+                                    <span class="tech-label">Technologies:</span>
+                                    <div class="tech-icons">
+                                        <i class="fab fa-react" title="React.js"></i>
+                                        <i class="fab fa-node-js" title="Node.js"></i>
+                                        <i class="fab fa-aws" title="AWS"></i>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn project-btn">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card-3d">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-thumbnail" style="background-image: url('src/images/projects/ecommerce.jpg');"></div>
+                            <div class="project-overlay">
                         <h3>E-commerce Platform</h3>
-                        <p>Scalable online store with advanced features.</p>
-                        <a href="#" class="project-link">View Case Study</a>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img"></div>
-                    <div class="project-info">
-                        <h3>IoT Monitoring Dashboard</h3>
-                        <p>Real-time analytics and monitoring for connected devices.</p>
-                        <a href="#" class="project-link">View Case Study</a>
+                        <div class="project-card-back">
+                            <div class="project-details">
+                                <h3>E-commerce Platform</h3>
+                                <div class="project-tags">
+                                    <span>E-commerce</span>
+                                    <span>Responsive</span>
+                                    <span>Mobile</span>
+                    </div>
+                                <p>Scalable online store with advanced features including AI-powered recommendations and secure payment processing.</p>
+                                <div class="project-tech">
+                                    <span class="tech-label">Technologies:</span>
+                                    <div class="tech-icons">
+                                        <i class="fab fa-shopify" title="Shopify"></i>
+                                        <i class="fab fa-js" title="JavaScript"></i>
+                                        <i class="fab fa-stripe" title="Stripe"></i>
+                </div>
+            </div>
+                                <a href="#" class="btn project-btn">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card-3d">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-thumbnail" style="background-image: url('src/images/projects/iot-dashboard.jpg');"></div>
+                            <div class="project-overlay">
+                                <h3>IoT Monitoring Dashboard</h3>
+                    </div>
+                    </div>
+                        <div class="project-card-back">
+                            <div class="project-details">
+                                <h3>IoT Monitoring Dashboard</h3>
+                                <div class="project-tags">
+                                    <span>IoT</span>
+                                    <span>Real-time</span>
+                                    <span>Data</span>
+                    </div>
+                                <p>Real-time analytics and monitoring for connected devices with advanced visualization and alerts.</p>
+                                <div class="project-tech">
+                                    <span class="tech-label">Technologies:</span>
+                                    <div class="tech-icons">
+                                        <i class="fab fa-angular" title="Angular"></i>
+                                        <i class="fab fa-python" title="Python"></i>
+                                        <i class="fas fa-database" title="MongoDB"></i>
+                    </div>
+                </div>
+                                <a href="#" class="btn project-btn">View Case Study</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <style>
+                .projects {
+                    position: relative;
+                    background: linear-gradient(135deg, #121212, #1a1a1a);
+                    padding: 6rem 0;
+                    overflow: hidden;
+                }
+                
+                .projects::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient(circle at 70% 30%, rgba(255, 0, 48, 0.05) 0%, transparent 70%);
+                    pointer-events: none;
+                }
+                
+                .projects-container {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                    gap: 3rem;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 2rem;
+                    perspective: 1000px;
+                }
+                
+                .project-card-3d {
+                    height: 450px;
+                    cursor: pointer;
+                    perspective: 1000px;
+                    position: relative;
+                }
+                
+                .project-card-inner {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    transform-style: preserve-3d;
+                    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+                    border-radius: 16px;
+                    will-change: transform;
+                }
+                
+                .project-card-3d:hover .project-card-inner,
+                .project-card-3d.flipped .project-card-inner {
+                    transform: rotateY(180deg);
+                }
+                
+                .project-card-front,
+                .project-card-back {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    -webkit-backface-visibility: hidden; /* Safari */
+                    backface-visibility: hidden;
+                    border-radius: 16px;
+                    overflow: hidden;
+                }
+                
+                .project-card-front {
+                    background-color: #222;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transform: rotateY(0deg);
+                }
+                
+                .project-card-back {
+                    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+                    transform: rotateY(180deg);
+                    padding: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                
+                .project-thumbnail {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-position: center;
+                    background-size: cover;
+                    opacity: 0.6;
+                    transition: all 0.5s ease;
+                }
+                
+                .project-overlay {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    padding: 2rem;
+                    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+                    z-index: 2;
+                }
+                
+                .project-overlay h3 {
+                    color: #fff;
+                    font-size: 1.5rem;
+                    margin: 0;
+                    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+                }
+                
+                .project-details {
+                    color: #fff;
+                    text-align: center;
+                }
+                
+                .project-details h3 {
+                    font-size: 1.8rem;
+                    margin-bottom: 1rem;
+                    color: #ff0030;
+                }
+                
+                .project-tags {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    margin-bottom: 1rem;
+                }
+                
+                .project-tags span {
+                    background: rgba(255, 0, 48, 0.15);
+                    padding: 0.3rem 0.8rem;
+                    border-radius: 30px;
+                    font-size: 0.8rem;
+                    color: #ff0030;
+                }
+                
+                .project-details p {
+                    margin-bottom: 1.5rem;
+                    line-height: 1.6;
+                    color: #e0e0e0;
+                }
+                
+                .project-tech {
+                    margin-bottom: 1.5rem;
+                }
+                
+                .tech-label {
+                    display: block;
+                    margin-bottom: 0.5rem;
+                    font-size: 0.9rem;
+                    color: #b0b0b0;
+                }
+                
+                .tech-icons {
+                    display: flex;
+                    justify-content: center;
+                    gap: 1rem;
+                }
+                
+                .tech-icons i {
+                    font-size: 1.8rem;
+                    color: #ff0030;
+                }
+                
+                .project-btn {
+                    background: linear-gradient(135deg, #ff0030, #c4002b);
+                    color: #fff;
+                    border: none;
+                    padding: 0.8rem 1.5rem;
+                    border-radius: 30px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    display: inline-block;
+                }
+                
+                .project-btn:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 5px 15px rgba(255, 0, 48, 0.3);
+                }
+                
+                @media (max-width: 768px) {
+                    .projects-container {
+                        grid-template-columns: 1fr;
+                        max-width: 400px;
+                    }
+                    
+                    .project-card-3d {
+                        height: 400px;
+                    }
+                }
+            </style>
         </section>
 
-        <section id="contact" class="contact">
-            <h2 class="section-title">Get in Touch</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>123 Tech Avenue, Innovation City</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>contact@vertexsolutions.com</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+1 (555) 123-4567</span>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                    </div>
+        <section id="contact" class="contact-3d">
+            <div class="contact-scene">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-3d-container">
+                    <div class="contact-card">
+                        <div class="contact-form-wrapper">
+                            <h3 class="contact-subtitle">Send Us a Message</h3>
+                            <form class="contact-form-3d">
+                                <div class="form-group-3d">
+                                    <div class="input-container">
+                                        <span class="input-icon"><i class="fas fa-user"></i></span>
                         <input type="text" id="name" placeholder="Your Name" required>
                     </div>
-                    <div class="form-group">
+                                </div>
+                                <div class="form-group-3d">
+                                    <div class="input-container">
+                                        <span class="input-icon"><i class="fas fa-envelope"></i></span>
                         <input type="email" id="email" placeholder="Your Email" required>
                     </div>
-                    <div class="form-group">
+                                </div>
+                                <div class="form-group-3d">
+                                    <div class="input-container">
+                                        <span class="input-icon"><i class="fas fa-tag"></i></span>
                         <input type="text" id="subject" placeholder="Subject">
                     </div>
-                    <div class="form-group">
+                                </div>
+                                <div class="form-group-3d">
+                                    <div class="input-container textarea-container">
+                                        <span class="input-icon textarea-icon"><i class="fas fa-comment-alt"></i></span>
                         <textarea id="message" placeholder="Your Message" required></textarea>
                     </div>
-                    <button type="submit" class="btn primary-btn">Send Message</button>
+                                </div>
+                                <button type="submit" class="btn-3d">
+                                    <span class="btn-text">Send Message</span>
+                                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                                </button>
                 </form>
             </div>
+                        <div class="contact-info-wrapper">
+                            <h3 class="contact-subtitle">Contact Information</h3>
+                            <div class="contact-info-items">
+                                <div class="contact-info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h4>Office Location</h4>
+                                        <p>Islamabad, Pakistan</p>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h4>Call Us</h4>
+                                        <p>+923554995103</p>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-envelope"></i></div>
+                                    <div class="info-content">
+                                        <h4>Email Us</h4>
+                                        <p>vertexsolution70@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="social-links-3d">
+                                <a href="#" class="social-link-3d">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-link-3d">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link-3d">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="social-link-3d">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .contact-3d {
+                    position: relative;
+                    background: linear-gradient(135deg, #121212, #1a1a1a);
+                    padding: 6rem 0;
+                    overflow: hidden;
+                }
+                
+                /* Fix the section title centering */
+                .section-title {
+                    text-align: center;
+                    width: 100%;
+                    display: block;
+                    position: relative;
+                    margin: 0 auto 3rem;
+                }
+                
+                .section-title::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 80px;
+                    height: 3px;
+                    background: linear-gradient(90deg, transparent, #ff0030, transparent);
+                }
+                
+                .contact-scene {
+                    position: relative;
+                    z-index: 1;
+                    text-align: center;
+                }
+                
+                .floating-shapes {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    pointer-events: none;
+                    opacity: 0.5;
+                }
+                
+                .shape {
+                    position: absolute;
+                    background: rgba(255, 0, 48, 0.05);
+                    border-radius: 50%;
+                    animation: floatSlow 20s infinite;
+                }
+                
+                .shape-1 {
+                    width: 120px;
+                    height: 120px;
+                    top: 10%;
+                    left: 10%;
+                    border: 2px solid rgba(255, 0, 48, 0.1);
+                }
+                
+                .shape-2 {
+                    width: 80px;
+                    height: 80px;
+                    bottom: 20%;
+                    right: 10%;
+                    animation-delay: 5s;
+                    border: 2px solid rgba(255, 0, 48, 0.1);
+                }
+                
+                .shape-3 {
+                    width: 150px;
+                    height: 150px;
+                    bottom: 10%;
+                    left: 30%;
+                    animation-delay: 2s;
+                    border: 2px solid rgba(255, 0, 48, 0.1);
+                }
+                
+                @keyframes floatSlow {
+                    0% {
+                        transform: translateY(0);
+                    }
+                    50% {
+                        transform: translateY(-20px);
+                    }
+                    100% {
+                        transform: translateY(0);
+                    }
+                }
+                
+                .section-header {
+                    text-align: center;
+                    width: 100%;
+                    margin: 0 auto 2rem;
+                }
+                
+                .section-title.contact-title {
+                    display: inline-block;
+                    position: relative;
+                    color: #fff;
+                    margin: 0 auto 3rem;
+                    animation: fadeInDown 0.8s ease forwards;
+                }
+                
+                .section-title.contact-title::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 80px;
+                    height: 3px;
+                    background: linear-gradient(90deg, transparent, #ff0030, transparent);
+                    animation: expandWidth 1s ease 0.3s forwards;
+                }
+                
+                @keyframes expandWidth {
+                    from { width: 0; }
+                    to { width: 80px; }
+                }
+                
+                @keyframes fadeInDown {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                @keyframes fadeInLeft {
+                    from {
+                        opacity: 0;
+                        transform: translateX(-20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+                
+                @keyframes fadeInRight {
+                    from {
+                        opacity: 0;
+                        transform: translateX(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+                
+                @keyframes pulse {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(1.05); }
+                    100% { transform: scale(1); }
+                }
+                
+                .contact-3d-container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 0 1rem;
+                    animation: fadeInUp 0.8s ease forwards;
+                }
+                
+                .contact-card {
+                    background: rgba(20, 20, 20, 0.8);
+                    border-radius: 16px;
+                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+                    border: 1px solid rgba(255, 0, 48, 0.1);
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    overflow: hidden;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+                
+                .contact-card:hover {
+                    box-shadow: 0 25px 50px rgba(255, 0, 48, 0.2);
+                }
+                
+                .contact-form-wrapper,
+                .contact-info-wrapper {
+                    padding: 3rem;
+                }
+                
+                .contact-form-wrapper {
+                    animation: fadeInLeft 0.8s ease forwards;
+                    animation-delay: 0.2s;
+                    opacity: 0;
+                }
+                
+                .contact-info-wrapper {
+                    animation: fadeInRight 0.8s ease forwards;
+                    animation-delay: 0.4s;
+                    opacity: 0;
+                }
+                
+                .contact-subtitle {
+                    color: #ff0030;
+                    font-size: 1.8rem;
+                    margin-bottom: 2rem;
+                    font-weight: 600;
+                    position: relative;
+                    padding-bottom: 0.5rem;
+                }
+                
+                .contact-subtitle::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 50px;
+                    height: 2px;
+                    background: #ff0030;
+                }
+                
+                .form-group-3d {
+                    margin-bottom: 1.5rem;
+                    opacity: 0;
+                    transform: translateY(10px);
+                    animation: fadeInUp 0.5s ease forwards;
+                }
+                
+                .form-group-3d:nth-child(1) { animation-delay: 0.4s; }
+                .form-group-3d:nth-child(2) { animation-delay: 0.6s; }
+                .form-group-3d:nth-child(3) { animation-delay: 0.8s; }
+                .form-group-3d:nth-child(4) { animation-delay: 1s; }
+                
+                .input-container {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border-radius: 8px;
+                    overflow: hidden;
+                    transition: all 0.3s ease;
+                }
+                
+                .input-container:focus-within {
+                    border-color: #ff0030;
+                    box-shadow: 0 0 10px rgba(255, 0, 48, 0.2);
+                    transform: translateY(-3px);
+                }
+                
+                .input-icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 50px;
+                    height: 50px;
+                    background: transparent;
+                    color: #ff0030;
+                    font-size: 1.2rem;
+                    transition: all 0.3s ease;
+                }
+                
+                .input-container:focus-within .input-icon {
+                    background: transparent;
+                    animation: none;
+                }
+                
+                .textarea-icon {
+                    height: 100%;
+                    align-items: flex-start;
+                    padding-top: 15px;
+                }
+                
+                .contact-form-3d input,
+                .contact-form-3d textarea {
+                    width: 100%;
+                    padding: 15px;
+                    background: transparent;
+                    border: none;
+                    color: #fff;
+                    font-size: 1rem;
+                    outline: none;
+                    transition: all 0.3s ease;
+                }
+                
+                .contact-form-3d textarea {
+                    height: 120px;
+                    resize: none;
+                }
+                
+                .contact-form-3d input::placeholder,
+                .contact-form-3d textarea::placeholder {
+                    color: rgba(255, 255, 255, 0.5);
+                    transition: all 0.3s ease;
+                }
+                
+                .contact-form-3d input:focus::placeholder,
+                .contact-form-3d textarea:focus::placeholder {
+                    opacity: 0.7;
+                    transform: translateX(5px);
+                }
+                
+                .btn-3d {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: linear-gradient(135deg, #ff0030, #c4002b);
+                    color: #fff;
+                    border: none;
+                    padding: 0;
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 8px;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    overflow: hidden;
+                    transition: all 0.3s ease;
+                    opacity: 0;
+                    animation: fadeInUp 0.5s ease forwards 1.2s;
+                }
+                
+                .btn-3d::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                    transition: all 0.6s ease;
+                }
+                
+                .btn-3d:hover::before {
+                    left: 100%;
+                }
+                
+                .btn-3d:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 5px 15px rgba(255, 0, 48, 0.3);
+                }
+                
+                .btn-text {
+                    position: relative;
+                    z-index: 2;
+                    transition: all 0.3s ease;
+                    padding-right: 15px;
+                }
+                
+                .btn-icon {
+                    position: relative;
+                    z-index: 2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.2rem;
+                    transition: all 0.3s ease;
+                    transform: translateX(-5px);
+                    opacity: 0;
+                }
+                
+                .btn-3d:hover .btn-text {
+                    transform: translateX(-5px);
+                }
+                
+                .btn-3d:hover .btn-icon {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                
+                .contact-logo {
+                    display: none;
+                }
+                
+                .contact-info-items {
+                    margin-top: 3.5rem;
+                }
+                
+                .contact-info-item {
+                    display: flex;
+                    margin-bottom: 1.5rem;
+                    opacity: 0;
+                    transform: translateX(20px);
+                    animation: fadeInLeft 0.5s ease forwards;
+                }
+                
+                .contact-info-item:nth-child(1) { animation-delay: 0.6s; }
+                .contact-info-item:nth-child(2) { animation-delay: 0.8s; }
+                .contact-info-item:nth-child(3) { animation-delay: 1s; }
+                
+                .info-icon {
+                    width: 50px;
+                    height: 50px;
+                    background: rgba(255, 0, 48, 0.1);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #ff0030;
+                    font-size: 1.2rem;
+                    margin-right: 1rem;
+                    transition: all 0.3s ease;
+                }
+                
+                .contact-info-item:hover .info-icon {
+                    transform: scale(1.1);
+                    background: rgba(255, 0, 48, 0.2);
+                }
+                
+                .info-content {
+                    flex: 1;
+                }
+                
+                .info-content h4 {
+                    color: #fff;
+                    margin: 0 0 0.3rem;
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                }
+                
+                .info-content p {
+                    color: rgba(255, 255, 255, 0.7);
+                    margin: 0;
+                    transition: all 0.3s ease;
+                }
+                
+                .contact-info-item:hover .info-content p {
+                    color: #fff;
+                    transform: translateX(5px);
+                }
+                
+                .social-links-3d {
+                    display: flex;
+                    gap: 1rem;
+                    margin-top: 2rem;
+                    justify-content: center;
+                    opacity: 0;
+                    animation: fadeInUp 0.5s ease forwards 1.2s;
+                }
+                
+                .social-link-3d {
+                    width: 40px;
+                    height: 40px;
+                    background: rgba(255, 0, 48, 0.1);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #ff0030;
+                    font-size: 1.2rem;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .social-link-3d::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: #ff0030;
+                    border-radius: 50%;
+                    transform: scale(0);
+                    transition: transform 0.3s ease;
+                    z-index: -1;
+                }
+                
+                .social-link-3d:hover::before {
+                    transform: scale(1);
+                }
+                
+                .social-link-3d:hover {
+                    color: #fff;
+                    transform: translateY(-3px);
+                }
+                
+                @media (max-width: 992px) {
+                    .contact-card {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .contact-form-wrapper, 
+                    .contact-info-wrapper {
+                        padding: 2rem;
+                    }
+                }
+                
+                @media (max-width: 576px) {
+                    .contact-form-wrapper, 
+                    .contact-info-wrapper {
+                        padding: 1.5rem;
+                    }
+                    
+                    .contact-subtitle {
+                        font-size: 1.5rem;
+                    }
+                }
+            </style>
         </section>
     </main>
 
@@ -426,7 +1249,7 @@
                 <div class="footer-column">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="mailto:contact@vertexsolutions.com">Email Us</a></li>
+                        <li><a href="mailto:vertexsolution70@gmail.com">Email Us</a></li>
                         <li><a href="tel:+15551234567">Call Us</a></li>
                     </ul>
                 </div>
@@ -459,6 +1282,79 @@
             color: 0xf40000,
             backgroundColor: 0x30309,
         });
+        
+        // Project cards 3D effect enhancement
+        const projectCards = document.querySelectorAll('.project-card-3d');
+        
+        projectCards.forEach(card => {
+            // Handle card flip on click for mobile and desktop
+            card.addEventListener('click', function(e) {
+                // Don't flip if clicking on buttons or links
+                if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || 
+                    e.target.closest('a') || e.target.closest('button')) {
+                    return;
+                }
+                
+                // Toggle flipped class for CSS transition
+                this.classList.toggle('flipped');
+                
+                // For accessibility
+                const cardInner = this.querySelector('.project-card-inner');
+                const isFlipped = this.classList.contains('flipped');
+                cardInner.setAttribute('aria-label', isFlipped ? 'Card is flipped, showing details' : 'Card is showing front');
+            });
+            
+            // Enhanced hover effects only for desktop (separate from flip)
+            if (window.matchMedia('(min-width: 992px)').matches) {
+                card.addEventListener('mousemove', function(e) {
+                    // Don't apply tilt effect if card is flipped
+                    if (this.classList.contains('flipped')) return;
+                    
+                    // Get position relative to card
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    // Calculate rotation based on mouse position (reduced intensity)
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateY = ((x - centerX) / centerX) * 5; // max 5 degrees
+                    const rotateX = -((y - centerY) / centerY) * 5; // max 5 degrees
+                    
+                    // Apply subtle shine effect to front of card
+                    const thumbnail = this.querySelector('.project-thumbnail');
+                    if (thumbnail) {
+                        thumbnail.style.opacity = '0.7'; // Slightly more visible on hover
+                        thumbnail.style.boxShadow = `inset 0 0 40px rgba(255,255,255,0.1)`;
+                    }
+                    
+                    // Apply subtle tilt but don't affect the flip transform
+                    this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                });
+                
+                // Reset effects on mouse leave
+                card.addEventListener('mouseleave', function() {
+                    // Don't reset if card is flipped
+                    if (this.classList.contains('flipped')) return;
+                    
+                    const thumbnail = this.querySelector('.project-thumbnail');
+                    if (thumbnail) {
+                        thumbnail.style.opacity = '0.6';
+                        thumbnail.style.boxShadow = 'none';
+                    }
+                    
+                    // Reset the subtle tilt
+                    this.style.transform = '';
+                });
+            }
+        });
+        
+        // Allow clicking on buttons inside cards without triggering flip
+        document.querySelectorAll('.project-btn, .project-card-3d a').forEach(element => {
+            element.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevents the click from bubbling up to the card
+            });
+        });
     });
     </script>
     
@@ -468,5 +1364,149 @@
             <div class="scroll-line"></div>
         </div>
     </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simplified hover effect to contact card
+            const contactCard = document.querySelector('.contact-card');
+            
+            if (contactCard) {
+                contactCard.addEventListener('mouseenter', function() {
+                    if (window.innerWidth > 992) { // Only on desktop
+                        this.style.transform = 'translateY(-10px)';
+                    }
+                });
+                
+                contactCard.addEventListener('mouseleave', function() {
+                    if (window.innerWidth > 992) {
+                        this.style.transform = 'translateY(0)';
+                    }
+                });
+                
+                // Enhanced contact form interactions
+                const formInputs = document.querySelectorAll('.contact-form-3d input, .contact-form-3d textarea');
+                
+                formInputs.forEach(input => {
+                    // Add focus animation to icons
+                    input.addEventListener('focus', function() {
+                        const container = this.closest('.input-container');
+                        const icon = container.querySelector('.input-icon i');
+                        
+                        // Add subtle rotation animation to icon
+                        icon.style.transition = 'all 0.3s ease';
+                        icon.style.transform = 'rotate(5deg) scale(1.1)';
+                        
+                        // Change color intensity
+                        icon.style.color = '#ff0030';
+                    });
+                    
+                    input.addEventListener('blur', function() {
+                        const container = this.closest('.input-container');
+                        const icon = container.querySelector('.input-icon i');
+                        
+                        // Reset icon
+                        icon.style.transform = '';
+                    });
+                });
+                
+                // Add animation to form submission button
+                const submitBtn = document.querySelector('.btn-3d');
+                if (submitBtn) {
+                    submitBtn.addEventListener('mouseover', function() {
+                        const btnIcon = this.querySelector('.btn-icon i');
+                        btnIcon.style.animation = 'pulse 1s infinite';
+                    });
+                    
+                    submitBtn.addEventListener('mouseout', function() {
+                        const btnIcon = this.querySelector('.btn-icon i');
+                        btnIcon.style.animation = '';
+                    });
+                }
+                
+                // Add scroll reveal animations for contact section elements
+                const contactSection = document.querySelector('.contact-3d');
+                
+                // Only trigger animations when scrolled into view
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.2
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Add animation classes when scrolled into view
+                            document.querySelectorAll('.form-group-3d, .contact-info-item').forEach(el => {
+                                el.style.opacity = '0';
+                                el.style.animation = null;
+                                
+                                // Re-trigger animations
+                                void el.offsetWidth; // Force reflow
+                                el.style.opacity = null;
+                            });
+                            
+                            // Remove observer once triggered
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                
+                // Start observing the contact section
+                if (contactSection) {
+                    observer.observe(contactSection);
+                }
+                
+                // Add ripple effect to contact info items
+                const infoItems = document.querySelectorAll('.info-icon');
+                
+                infoItems.forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        // Create ripple element
+                        const ripple = document.createElement('span');
+                        ripple.classList.add('ripple');
+                        
+                        // Position ripple at click point
+                        const rect = this.getBoundingClientRect();
+                        const size = Math.max(rect.width, rect.height);
+                        
+                        ripple.style.width = ripple.style.height = `${size}px`;
+                        ripple.style.left = `${e.clientX - rect.left - size/2}px`;
+                        ripple.style.top = `${e.clientY - rect.top - size/2}px`;
+                        
+                        // Add ripple to element
+                        this.appendChild(ripple);
+                        
+                        // Remove ripple after animation
+                        setTimeout(() => ripple.remove(), 600);
+                    });
+                });
+            }
+        });
+    </script>
+    
+    <style>
+        /* Ripple effect for contact info icons */
+        .info-icon {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ripple {
+            position: absolute;
+            background: rgba(255, 0, 48, 0.3);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: rippleEffect 0.6s linear;
+            pointer-events: none;
+        }
+        
+        @keyframes rippleEffect {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    </style>
 </body>
 </html>
