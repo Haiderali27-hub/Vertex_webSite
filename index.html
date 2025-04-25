@@ -688,12 +688,14 @@
                 }
                 
                 /* Fix the section title centering */
-                .section-title {
+                .contact-3d .section-title {
                     text-align: center;
                     width: 100%;
                     display: block;
                     position: relative;
-                    margin: 0 auto 3rem;
+                    margin: 0 auto 4rem;
+                    left: auto;
+                    transform: none;
                 }
                 
                 .section-title::after {
@@ -929,6 +931,8 @@
                     border-radius: 8px;
                     overflow: hidden;
                     transition: all 0.3s ease;
+                    width: 100%;
+                    margin: 0 auto;
                 }
                 
                 .input-container:focus-within {
@@ -963,13 +967,15 @@
                 .contact-form-3d input,
                 .contact-form-3d textarea {
                     width: 100%;
-                    padding: 15px;
+                    padding: 15px 15px 15px 0;
                     background: transparent;
                     border: none;
                     color: #fff;
                     font-size: 1rem;
                     outline: none;
                     transition: all 0.3s ease;
+                    min-width: 0;
+                    flex: 1;
                 }
                 
                 .contact-form-3d textarea {
