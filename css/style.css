@@ -1613,6 +1613,12 @@ footer {
 @media screen and (max-width: 480px) {
     .hero h1 {
         font-size: 2rem;
+        word-break: keep-all;
+        white-space: normal;
+    }
+    
+    .hero h1 .mobile-break {
+        display: block;
     }
     
     .subtitle {
