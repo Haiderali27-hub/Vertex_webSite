@@ -1525,10 +1525,11 @@
                     
                     // Prepare template parameters
                     const templateParams = {
-                        from_name: name,
-                        from_email: email,
+                        name: name,           // Changed from from_name to name
+                        email: email,         // Changed from from_email to email
                         subject: subject,
-                        message: message
+                        message: message,
+                        reply_to: email       // Add reply_to so emails can be responded to
                     };
                     
                     // Send email via EmailJS
