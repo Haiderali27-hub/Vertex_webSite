@@ -182,55 +182,70 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Fade-in elements animation
-    const fadeElements = document.querySelectorAll('.fade-in');
-    const slideRightElements = document.querySelectorAll('.slide-in-right');
+    // Check if device is mobile
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
     
-    const fadeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, { threshold: 0.3 });
-    
-    fadeElements.forEach(element => {
-        fadeObserver.observe(element);
-    });
-    
-    slideRightElements.forEach(element => {
-        fadeObserver.observe(element);
-    });
-    
-    // Stats counter animation
-    const statElements = document.querySelectorAll('.stat-number');
-    
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = entry.target;
-                const countTo = parseInt(target.getAttribute('data-count'));
-                let count = 0;
-                const speed = 2000 / countTo;
-                
-                function updateCount() {
-                    target.innerHTML = count;
-                    count++;
-                    
-                    if (count <= countTo) {
-                        setTimeout(updateCount, speed);
-                    }
+    if (!isMobile) {
+        // Only run animations on desktop
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const slideRightElements = document.querySelectorAll('.slide-in-right');
+        
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
                 }
-                
-                updateCount();
-                statsObserver.unobserve(target);
-            }
+            });
+        }, { threshold: 0.3 });
+        
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
         });
-    }, { threshold: 0.7 });
-    
-    statElements.forEach(element => {
-        statsObserver.observe(element);
-    });
+        
+        slideRightElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+        
+        // Stats counter animation
+        const statElements = document.querySelectorAll('.stat-number');
+        
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const countTo = parseInt(target.getAttribute('data-count'));
+                    let count = 0;
+                    const speed = 2000 / countTo;
+                    
+                    function updateCount() {
+                        if (count < countTo) {
+                            count++;
+                            target.textContent = count;
+                            requestAnimationFrame(updateCount);
+                        }
+                    }
+                    
+                    updateCount();
+                    statsObserver.unobserve(target);
+                }
+            });
+        }, { threshold: 0.7 });
+        
+        statElements.forEach(element => {
+            statsObserver.observe(element);
+        });
+    } else {
+        // For mobile: show elements immediately without animations
+        document.querySelectorAll('.fade-in, .slide-in-right').forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+        });
+        
+        // For stats, set final numbers immediately
+        document.querySelectorAll('.stat-number').forEach(el => {
+            el.textContent = el.getAttribute('data-count');
+        });
+    }
     
     // Enhanced Services Card Staggered Animation
     const enhancedServiceCards = document.querySelectorAll('.service-card-advanced');

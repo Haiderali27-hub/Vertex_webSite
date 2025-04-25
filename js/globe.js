@@ -51,22 +51,62 @@ document.addEventListener('DOMContentLoaded', function() {
 let vantaEffect = null;
 
 function initGlobeAnimation() {
-  vantaEffect = VANTA.GLOBE({
-    el: "#home",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    scale: 1.00,
-    scaleMobile: 1.00,
-    color: 0xff0035, // The color you want (currently red)
-    backgroundColor: 0x111115,
-    size: 1.00,
-    speed: 1.50,
-    points: 0, // Remove the stars (points)
-    maxDistance: 0, // Remove the dots inside the globe
-});
+    // Only initialize on desktop (> 768px)
+    if (window.innerWidth > 768) {
+        vantaEffect = VANTA.GLOBE({
+            el: "#home",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0xff0035, // Bright red color
+            backgroundColor: 0x111115,
+            size: 1.00,
+            speed: 1.50,
+            points: 0,
+            maxDistance: 0,
+        });
+
+        // Add pulsing red background glow
+        const homeSection = document.getElementById('home');
+        if (homeSection) {
+            // Add radial gradient background
+            homeSection.style.position = 'relative';
+            homeSection.style.overflow = 'hidden';
+            
+            // Create glow element
+            const glowElement = document.createElement('div');
+            glowElement.className = 'background-glow';
+            homeSection.appendChild(glowElement);
+
+            // Add the CSS for the glow animation
+            const style = document.createElement('style');
+            style.textContent = `
+                .background-glow {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient(circle, rgba(255,0,53,0.2) 0%, rgba(17,17,21,0) 70%);
+                    z-index: 0;
+                    animation: glowPulse 4s ease-in-out infinite;
+                    pointer-events: none;
+                }
+
+                @keyframes glowPulse {
+                    0% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+                    50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
+                    100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    }
 
 
   // Scroll-based interactivity
@@ -90,6 +130,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const homeSection = document.getElementById('home');
   if (homeSection) {
     initGlobeAnimation();
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth <= 768 && vantaEffect) {
+            vantaEffect.destroy();
+            vantaEffect = null;
+        } else if (window.innerWidth > 768 && !vantaEffect) {
+            initGlobeAnimation();
+        }
+    });
   }
 });
 
