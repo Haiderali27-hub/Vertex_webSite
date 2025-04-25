@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/cursor.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/globe.css">
+    <script src="js/component-loader.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Using CDN-hosted versions of Three.js and VANTA.GLOBE libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
@@ -18,25 +19,28 @@
     <div class="cursor-follower"></div>
     <div class="animated-background"></div>
 
-    <header>
-        <nav>
-            <div class="logo">
-                <span>Vertex</span>Solutions
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#enhanced-services" class="nav-link">Services</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>      
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-        </nav>
-    </header>
+    <!-- Include Header -->
+    <div id="header-component">    
+        <header>
+            <nav>
+                <div class="logo">
+                    <span>Vertex</span>Solutions
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#enhanced-services" class="nav-link">Services</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>      
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
+        </header>
+    </div>
 
     <main>
         <section id="home" class="hero">
@@ -204,7 +208,7 @@
                         <li><i class="fas fa-check"></i> E-commerce Solutions</li>
                         <li><i class="fas fa-check"></i> Web Security Implementation</li>
                     </ul>
-                    <a href="web-development.html" class="service-cta" target="_blank">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="page/web-development.html" class="service-cta" target="_blank">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
                 <div class="service-card-advanced fade-in">
@@ -221,7 +225,7 @@
                         <li><i class="fas fa-check"></i> Intuitive Interfaces</li>
                         <li><i class="fas fa-check"></i> Advanced Analytics</li>
                     </ul>
-                    <a href="/mobile-app-development.html" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="page/mobile-app-development.html" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
                 <div class="service-card-advanced fade-in">
@@ -1237,43 +1241,46 @@
         </div>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <span>Vertex</span>Solutions
+    <!-- Include Footer -->
+    <div id="footer-component">
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span>Vertex</span>Solutions
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#enhanced-services">Services</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#about">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#">Software Development</a></li>
+                            <li><a href="mobile-app-development.html">Mobile Apps</a></li>
+                            <li><a href="#">UI/UX Design</a></li>
+                            <li><a href="#">Cloud Solutions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:vertexsolution70@gmail.com">Email Us</a></li>
+                            <li><a href="tel:+15551234567">Call Us</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#enhanced-services">Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#about">About</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">Software Development</a></li>
-                        <li><a href="#">Mobile Apps</a></li>
-                        <li><a href="#">UI/UX Design</a></li>
-                        <li><a href="#">Cloud Solutions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="mailto:vertexsolution70@gmail.com">Email Us</a></li>
-                        <li><a href="tel:+15551234567">Call Us</a></li>
-                    </ul>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vertex Solutions. All rights reserved.</p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2023 Vertex Solutions. All rights reserved.</p>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script src="js/main.js"></script>
     <script src="js/cursor.js"></script>

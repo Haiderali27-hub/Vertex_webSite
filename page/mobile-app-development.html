@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Android App Development Services | Vertex Solutions</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cursor.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/service-pages.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cursor.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/service-pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- No external component loader needed -->
     <style>
         /* Mobile App Development Page Specific Styles */
         :root {
@@ -16,6 +17,99 @@
             --android-secondary: #4285f4;
             --android-accent: #073042;
             --android-dark: #073042;
+        }
+        
+        /* Fix for section headings */
+        .section-title {
+            font-size: 2.5rem;
+            color: #ffffff;
+            text-align: center;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            padding: 0 15px 1.5rem;
+            font-weight: 600;
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            overflow: visible;
+            word-wrap: break-word;
+            box-sizing: border-box;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            left: 0;
+            right: 0;
+            float: none;
+            clear: both;
+            transform: none;
+            hyphens: auto;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--android-primary), var(--android-secondary));
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #e0e0e0;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            display: block;
+        }
+        
+        /* Responsive adjustments */
+        @media screen and (max-width: 1366px) {
+            .section-title {
+                font-size: 2.3rem;
+                padding-left: 15px;
+                padding-right: 15px;
+                word-wrap: break-word;
+                hyphens: auto;
+                overflow-wrap: break-word;
+            }
+            
+            .container {
+                width: 100%;
+                padding-left: 20px;
+                padding-right: 20px;
+                box-sizing: border-box;
+            }
+        }
+        
+        @media screen and (max-width: 1024px) {
+            .section-title {
+                font-size: 2.2rem;
+                word-break: normal;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
         }
         
         /* Hero section styling */
@@ -36,6 +130,32 @@
             gap: 3rem;
             align-items: center;
             width: 100%;
+        }
+        
+        /* Responsive fixes for mobile view */
+        @media screen and (max-width: 768px) {
+            .split-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .container {
+                width: 100%;
+                padding: 0 15px;
+                overflow-x: hidden;
+            }
+            
+            .interactive-phone-mockup {
+                max-width: 280px;
+                height: auto;
+            }
+            
+            .tech-categories {
+                overflow-x: auto;
+                padding-bottom: 15px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+            }
         }
         
         .content-heading {
@@ -703,32 +823,24 @@
     <div class="cursor-dot"></div>
     
     <!-- Header Section -->
-    <header class="site-header">
-        <div class="container">
+    <header>
+        <nav>
             <div class="logo">
-                <a href="index.html">
-                    <span class="logo-text"><span class="logo-vertex">Vertex</span>Solutions</span>
-                </a>
+                <span>Vertex</span>Solutions
             </div>
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li class="services-dropdown">
-                        <a href="#" class="active">Services <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="web-development.html">Web Development</a></li>
-                            <li><a href="mobile-app-development.html" class="active">Android Development</a></li>
-                            <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
-                            <li><a href="cybersecurity.html">Cybersecurity</a></li>
-                            <li><a href="ai-solutions.html">AI Solutions</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="portfolio.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#enhanced-services" class="nav-link">Services</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>      
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
     </header>
 
     <!-- Mobile Menu -->
@@ -806,7 +918,7 @@
         <!-- Android Overview Section -->
         <section id="android-dev-overview" class="mobile-dev-section">
             <div class="container">
-                <h2 class="section-title">Android App Development</h2>
+                <h2 class="section-title" id="main-title" style="display:block !important; visibility:visible !important; word-break:break-word; word-wrap:break-word; overflow:visible; white-space:normal;">Android App Development</h2>
                 <p class="section-subtitle">We create custom Android applications that leverage the full potential of the platform to deliver exceptional user experiences.</p>
                 
                 <div class="features-grid">
@@ -864,7 +976,7 @@
         <!-- Android Technologies Section -->
         <section id="android-technologies" class="mobile-dev-section alt-bg">
             <div class="container">
-                <h2 class="section-title">Android Development Technologies</h2>
+                <h2 class="section-title" id="tech-title" style="display:block !important; visibility:visible !important; word-break:break-word; word-wrap:break-word; overflow:visible; white-space:normal;">Android Development Technologies</h2>
                 <p class="section-subtitle">We leverage cutting-edge technologies and frameworks to build powerful, scalable Android applications that deliver exceptional user experiences across all device types.</p>
                 
                 <div class="tech-categories">
@@ -1040,8 +1152,16 @@
         <!-- Development Process Section -->
         <section id="process" class="mobile-dev-section">
             <div class="container">
-                <h2 class="section-title">Our Android Development Process</h2>
+                <h2 class="section-title" id="process-title" style="display:block !important; visibility:visible !important; word-break:break-word; word-wrap:break-word; overflow:visible; white-space:normal;">Our Android Development Process</h2>
                 <p class="section-subtitle">A systematic approach to deliver high-quality Android applications that meet your business objectives.</p>
+                <style>
+                    /* Force title to be visible */
+                    #process-title {
+                        display: block !important;
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                    }
+                </style>
                 
                 <div class="process-steps">
                     <div class="process-step">
@@ -1098,8 +1218,76 @@
         <!-- Android Security Section -->
         <section id="android-security" class="mobile-dev-section alt-bg">
             <div class="container">
-                <h2 class="section-title">Android App Security</h2>
+                <h2 class="section-title" id="security-title" style="display:block !important; visibility:visible !important; word-break:break-word; word-wrap:break-word; overflow:visible; white-space:normal;">Android App Security</h2>
                 <p class="section-subtitle">We implement comprehensive security measures to protect your application and user data.</p>
+                <style>
+                    /* Force title to be visible and centered */
+                    #security-title, #process-title, #main-title, #tech-title, #features-title {
+                        display: block !important;
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                        text-align: center !important;
+                        margin-left: auto !important;
+                        margin-right: auto !important;
+                        left: 0 !important;
+                        right: 0 !important;
+                        position: relative !important;
+                        float: none !important;
+                        width: 100% !important;
+                        max-width: 100% !important;
+                        box-sizing: border-box !important;
+                        transform: none !important;
+                        clear: both !important;
+                    }
+                    
+                    .container {
+                        text-align: center !important;
+                        padding-left: 15px !important;
+                        padding-right: 15px !important;
+                    }
+                    
+                    /* Additional styling for specific sections */
+                    .mobile-dev-section {
+                        text-align: center !important;
+                    }
+                    
+                    .section-title {
+                        width: 100% !important;
+                        max-width: 100% !important;
+                        text-align: center !important;
+                        left: 0 !important;
+                        right: 0 !important;
+                        position: relative !important;
+                        box-sizing: border-box !important;
+                        margin-left: auto !important;
+                        margin-right: auto !important;
+                        float: none !important;
+                        display: block !important;
+                        transform: none !important;
+                        clear: both !important;
+                    }
+                    
+                    /* Fix section text alignment */
+                    .section-subtitle {
+                        text-align: center !important;
+                        margin-left: auto !important;
+                        margin-right: auto !important;
+                        width: 100% !important;
+                        max-width: 800px !important;
+                    }
+                    
+                    /* Fix font sizing for narrow screens */
+                    @media (max-width: 1024px) {
+                        .section-title {
+                            font-size: 2rem !important;
+                            padding-left: 10px !important;
+                            padding-right: 10px !important;
+                            hyphens: auto !important;
+                            overflow-wrap: break-word !important;
+                            word-wrap: break-word !important;
+                        }
+                    }
+                </style>
                 
                 <div class="security-methodology">
                     <div class="security-step">
@@ -1156,7 +1344,7 @@
         <!-- Advanced Features Section -->
         <section id="advanced-features" class="mobile-dev-section">
             <div class="container">
-                <h2 class="section-title">Advanced Android App Features</h2>
+                <h2 class="section-title" id="features-title" style="display:block !important; visibility:visible !important; word-break:break-word; word-wrap:break-word; overflow:visible; white-space:normal;">Advanced Android App Features</h2>
                 <p class="section-subtitle">Enhance your application with cutting-edge Android capabilities to provide exceptional user experiences.</p>
                 
                 <div class="features-grid">
@@ -1214,76 +1402,246 @@
         <!-- CTA Section -->
         <section id="android-dev-cta" class="mobile-dev-section alt-bg">
             <div class="container">
-                <h2 class="section-title">Ready to Build Your Android App?</h2>
-                <p class="section-subtitle">Let's discuss how we can bring your app idea to life with our expert Android development services.</p>
-                
-                <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary">Get Started</a>
-                    <a href="portfolio.html" class="btn btn-secondary">View Our Work</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="img/vertex-logo-white.svg" alt="Vertex Solutions">
-                    <p>Building exceptional digital experiences with cutting-edge technology.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="web-development.html">Web Development</a></li>
-                        <li><a href="mobile-app-development.html">Android Development</a></li>
-                        <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
-                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
-                        <li><a href="ai-solutions.html">AI Solutions</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Silicon Valley, CA 94043</p>
-                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-                    <p><i class="fas fa-envelope"></i> info@vertexsolutions.com</p>
-                    
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <div class="cta-content">
+                    <div class="cta-text">
+                        <p class="cta-message">Let's discuss how we can bring your app idea to life with our expert Android development services.</p>
+                    </div>
+                    <div class="cta-action">
+                        <a href="contact.html" class="cta-btn primary">Get Started</a>
+                        <a href="portfolio.html" class="cta-btn secondary">View Our Work</a>
                     </div>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 Vertex Solutions. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
+            <style>
+                /* Enhanced CTA Section Styling */
+                #android-dev-cta {
+                    padding: 5rem 2rem;
+                    background: linear-gradient(135deg, #121212, #1e1e1e);
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                #android-dev-cta::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzEyMTIxMiI+PC9yZWN0Pgo8Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIyIiBmaWxsPSIjMmEyYTJhIj48L2NpcmNsZT4KPC9zdmc+');
+                    opacity: 0.4;
+                    z-index: 0;
+                }
+                
+                .cta-content {
+                    max-width: 900px;
+                    margin: 0 auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    position: relative;
+                    z-index: 1;
+                }
+                
+                .cta-message {
+                    font-size: 2rem;
+                    line-height: 1.4;
+                    color: #ffffff;
+                    margin-bottom: 2.5rem;
+                    font-weight: 300;
+                    letter-spacing: 0.5px;
+                }
+                
+                .cta-action {
+                    display: flex;
+                    gap: 1.5rem;
+                    margin-top: 1rem;
+                }
+                
+                .cta-btn {
+                    display: inline-block;
+                    padding: 14px 32px;
+                    border-radius: 4px;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                    z-index: 1;
+                }
+                
+                .cta-btn::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 0%;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    transition: all 0.3s ease;
+                    z-index: -1;
+                }
+                
+                .cta-btn:hover::before {
+                    height: 100%;
+                }
+                
+                .cta-btn.primary {
+                    background-color: #ff0030;
+                    color: #ffffff;
+                    box-shadow: 0 4px 14px rgba(255, 0, 48, 0.4);
+                }
+                
+                .cta-btn.secondary {
+                    background-color: transparent;
+                    color: #ffffff;
+                    border: 2px solid #ffffff;
+                }
+                
+                .cta-btn:hover {
+                    transform: translateY(-5px);
+                }
+                
+                .cta-btn.primary:hover {
+                    box-shadow: 0 6px 20px rgba(255, 0, 48, 0.6);
+                }
+                
+                .cta-btn.secondary:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+                
+                @media screen and (max-width: 768px) {
+                    .cta-message {
+                        font-size: 1.5rem;
+                    }
+                    
+                    .cta-action {
+                        flex-direction: column;
+                        width: 100%;
+                        max-width: 300px;
+                    }
+                    
+                    .cta-btn {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            </style>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span>Vertex</span>Solutions
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#enhanced-services">Services</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Software Development</a></li>
+                        <li><a href="mobile-app-development.html">Mobile Apps</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:vertexsolution70@gmail.com">Email Us</a></li>
+                        <li><a href="tel:+15551234567">Call Us</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Vertex Solutions. All rights reserved.</p>
+        </div>
     </footer>
 
+    <!-- Scroll to Top -->
+    <div class="scroll-to-top">
+        <div class="scroll-text">Scroll To Top</div>
+        <div class="scroll-line-container">
+            <div class="scroll-line"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Initialize scroll to top functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopBtn = document.querySelector('.scroll-to-top');
+            const scrollLine = document.querySelector('.scroll-line');
+            let isActive = false;
+            
+            function updateScrollIndicator() {
+                const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+                const scrollLineHeight = Math.min(scrollPercent * 100, 100);
+                
+                if (scrollLine) {
+                    scrollLine.style.height = `${scrollLineHeight}%`;
+                }
+                
+                // Show/hide scroll to top button based on scroll position
+                if (window.scrollY > 500) {
+                    scrollToTopBtn.classList.add('visible');
+                    
+                    if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 100) {
+                        if (!isActive) {
+                            scrollToTopBtn.classList.add('active');
+                            isActive = true;
+                        }
+                    } else {
+                        if (isActive) {
+                            scrollToTopBtn.classList.remove('active');
+                            isActive = false;
+                        }
+                    }
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                }
+            }
+            
+            // Initialize scroll indicator
+            window.addEventListener('scroll', updateScrollIndicator);
+            updateScrollIndicator();
+            
+            // Scroll to top on click
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    menuToggle.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
     <script>
         // Animated phone mockup interactions
         document.addEventListener('DOMContentLoaded', function() {
