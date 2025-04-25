@@ -102,7 +102,7 @@
                     </div>
                     <div class="member-info">
                         <h3>Asad Ullah</h3>
-                        <span class="position">CEO & Founder</span>
+                        <span class="position">Web Developer</span>
                         <p>Visionary leader with 15+ years of experience in tech innovation.</p>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
                     </div>
                     <div class="member-info">
                         <h3>Muhammad Haider</h3>
-                        <span class="position">CTO</span>
+                        <span class="position">Mobile App Developer</span>
                         <p>Tech innovator specializing in AI and machine learning solutions.</p>
                     </div>
                 </div>
@@ -1275,6 +1275,55 @@
             <div class="scroll-line"></div>
         </div>
     </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopBtn = document.querySelector('.scroll-to-top');
+            const scrollLine = document.querySelector('.scroll-line');
+            let isActive = false;
+
+            // Update scroll progress and visibility
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('visible');
+                    if (scrollLine) {
+                        const scrollPosition = window.pageYOffset;
+                        const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+                        const scrollPercentage = (scrollPosition / documentHeight) * 100;
+                        scrollLine.style.height = scrollPercentage + '%';
+                    }
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                    scrollToTopBtn.classList.remove('active');
+                    isActive = false;
+                }
+            });
+
+            // Handle click events
+            scrollToTopBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // On mobile, first click shows the full button, second click scrolls to top
+                if (window.innerWidth <= 768) {
+                    if (!isActive) {
+                        isActive = true;
+                        this.classList.add('active');
+                    } else {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                } else {
+                    // On desktop, directly scroll to top
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
