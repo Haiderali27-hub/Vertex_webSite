@@ -51,10 +51,12 @@ section {
 
 .section-title {
     text-align: center;
-    margin-bottom: 4rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
     font-size: 2.5rem;
     position: relative;
-    display: inline-block;
+    display: block;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -67,6 +69,15 @@ section {
     background-color: var(--primary-color);
     bottom: -10px;
     left: 25%;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-color-dim);
+    font-size: 1.2rem;
+    margin: -2rem auto 4rem;
+    max-width: 700px;
+    width: 100%;
 }
 
 .container {
@@ -361,14 +372,6 @@ nav {
     overflow: hidden;
 }
 
-.section-subtitle {
-    text-align: center;
-    color: var(--text-color-dim);
-    font-size: 1.2rem;
-    margin: -2rem auto 4rem;
-    max-width: 700px;
-}
-
 .services-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -477,7 +480,7 @@ nav {
 }
 
 .service-card-advanced p {
-    color: var(--text-color-dim);
+    color: var (--text-color-dim);
     margin-bottom: 1.5rem;
     font-size: 1rem;
     line-height: 1.6;

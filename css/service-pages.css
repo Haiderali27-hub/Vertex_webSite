@@ -59,6 +59,43 @@
     --card-hover-transform: translateY(-8px) scale(1.02);
 }
 
+/* Service section titles - ensuring consistent centering */
+.service-title,
+.section-title {
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto 3rem !important;
+    display: block !important;
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Service section containers */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Service section content */
+.service-section {
+    padding: 6rem 20px;
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Hero Section Enhancements */
 .inner-page-hero {
     position: relative;

@@ -69,6 +69,7 @@
             background: rgba(20, 20, 20, 0.7);
             border-radius: 10px;
             padding: 2rem;
+            margin-bottom: 1rem;  /* Added consistent spacing */
             transition: all 0.3s ease;
             position: relative;
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -78,6 +79,10 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(123, 104, 238, 0.1);
             background: rgba(255, 255, 255, 0.03);
+        }
+
+        .step-number {
+            margin-bottom: 1rem;  /* Consistent spacing */
         }
 
         /* Tools grid */
@@ -92,6 +97,7 @@
             background: rgba(20, 20, 20, 0.7);
             border-radius: 10px;
             padding: 1.5rem;
+            margin-bottom: 1rem;  /* Added consistent spacing */
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -104,7 +110,7 @@
 
         .tool-icon {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1rem;  /* Consistent spacing */
             color: var(--uiux-primary);
         }
 
@@ -201,23 +207,19 @@
             }
         }
 
-        /* Section titles and headings - Enhanced centering */
+        /* Section titles and headings */
         .section-title {
             font-size: 3.5rem;
             color: #7B68EE;
             text-align: center;
-            margin: 0 auto 2rem;
             position: relative;
             padding: 0;
             width: 100%;
-            max-width: 1000px;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
             display: block;
-            transition: all 0.3s ease-in-out;
-            opacity: 1;
-            transform: translate(-50%, 0);
             left: 50%;
-            margin-left: 0;
-            margin-right: 0;
+            transform: translateX(-50%);
         }
 
         .section-title::after {
@@ -230,14 +232,13 @@
             height: 3px;
             background: #7B68EE;
             border-radius: 2px;
-            transition: all 0.3s ease-in-out;
         }
 
         .section-subtitle {
             font-size: 1.2rem;
             color: #b0b0b0;
             text-align: center;
-            margin: 30px auto 4rem;
+            margin: 0 auto 4rem;
             max-width: 800px;
             line-height: 1.6;
             padding: 0;
@@ -245,11 +246,7 @@
             display: block;
             transition: all 0.3s ease-in-out;
             opacity: 1;
-            position: relative;
-            left: 50%;
-            transform: translate(-50%, 0);
-            margin-left: 0;
-            margin-right: 0;
+            transform: none;
         }
 
         /* Mobile responsiveness for headings */
@@ -257,18 +254,13 @@
             .section-title {
                 font-size: 2.5rem;
                 padding: 0 15px;
-                width: calc(100% - 30px);
-                left: 50%;
-                transform: translate(-50%, 0);
+                margin-bottom: 1.5rem;
             }
 
             .section-subtitle {
                 font-size: 1.1rem;
-                margin: 30px auto 3rem;
+                margin-bottom: 3rem;
                 padding: 0 15px;
-                width: calc(100% - 30px);
-                left: 50%;
-                transform: translate(-50%, 0);
             }
         }
 
@@ -276,7 +268,6 @@
             .section-title {
                 font-size: 2rem;
                 padding: 0 10px;
-                width: calc(100% - 20px); /* Account for padding */
             }
         }
 
@@ -297,7 +288,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
-            margin-top: 4rem;
+            margin-top: 3rem;
         }
 
         .overview-text {
@@ -323,11 +314,13 @@
         }
 
         .feature-item {
-            background: rgba(30, 30, 30, 0.9);
+            background: rgba(20, 20, 20, 0.7);
+            border-radius: 10px;
             padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(123, 104, 238, 0.1);
+            margin-bottom: 2rem;  /* Added consistent spacing */
             transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .feature-item:hover {
@@ -345,7 +338,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.5rem;  /* Consistent spacing */
         }
 
         .feature-icon i {
@@ -356,36 +349,13 @@
         .feature-content h3 {
             color: #ffffff;
             font-size: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1rem;  /* Consistent spacing */
         }
 
         .feature-content p {
             color: #b0b0b0;
             line-height: 1.6;
             font-size: 1rem;
-        }
-
-        /* Mobile responsiveness for headings */
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2.5rem;
-                padding: 0 15px;
-                width: auto;
-            }
-
-            .section-subtitle {
-                font-size: 1.1rem;
-                margin: 30px auto 3rem;
-                padding: 0 15px;
-                width: auto;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .section-title {
-                font-size: 2rem;
-                padding: 0 10px;
-            }
         }
 
         /* Center design elements */
@@ -423,34 +393,6 @@
             margin: 0 auto;
             width: 100%;
             max-width: 800px;
-        }
-
-        .section-title, .section-subtitle {
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%;
-        }
-
-        .section-title, .section-subtitle {
-            position: relative;
-            left: 0;
-            transform: none;
-            margin: 0 auto;
-            display: block;
-            width: 100%;
-            max-width: 1000px;
-        }
-
-        @media (max-width: 768px) {
-            .section-title, .section-subtitle {
-                position: relative;
-                left: 0;
-                transform: none;
-                margin: 0 auto;
-                padding: 0 15px;
-                width: calc(100% - 30px);
-            }
         }
 
         .cta-section {
@@ -708,7 +650,7 @@
                         <div class="tool-icon">
                             <i class="fas fa-palette"></i>
                         </div>
-                        <h3>Adobe Photoshop</h3>
+                        <h3>Adobe Photoshop</h>
                         <p>Industry-standard image editing software for creating visual assets.</p>
                     </div>
 
