@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android App Development Services | Vertex Solutions</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cursor.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/service-pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- No external component loader needed -->
+    <style>
+        /* Mobile App Development Page Specific Styles */
+        :root {
+            --android-primary: #3ddc84;
+            --android-secondary: #4285f4;
+            --android-accent: #073042;
+            --android-dark: #073042;
+        }
+        
+        /* Fix for section headings */
+        .section-title {
+            font-size: 2.5rem;
+            color: #ffffff;
+            text-align: center;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            padding: 0 15px 1.5rem;
+            font-weight: 600;
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            overflow: visible;
+            word-wrap: break-word;
+            box-sizing: border-box;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            left: 0;
+            right: 0;
+            float: none;
+            clear: both;
+            transform: none;
+            hyphens: auto;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--android-primary), var(--android-secondary));
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #e0e0e0;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            display: block;
+        }
+        
+        /* Responsive adjustments */
+        @media screen and (max-width: 1366px) {
+            .section-title {
+                font-size: 2.3rem;
+                padding-left: 15px;
+                padding-right: 15px;
+                word-wrap: break-word;
+                hyphens: auto;
+                overflow-wrap: break-word;
+            }
+            
+            .container {
+                width: 100%;
+                padding-left: 20px;
+                padding-right: 20px;
+                box-sizing: border-box;
+            }
+        }
+        
+        @media screen and (max-width: 1024px) {
+            .section-title {
+                font-size: 2.2rem;
+                word-break: normal;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+        
+        /* Hero section styling */
+        .inner-page-hero {
+            position: relative;
+            min-height: 90vh;
+            background: linear-gradient(135deg, #073042, #121212);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Split layout for content + phone mockup */
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            width: 100%;
+        }
+        
+        /* Responsive fixes for mobile view */
+        @media screen and (max-width: 768px) {
+            .split-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .container {
+                width: 100%;
+                padding: 0 15px;
+                overflow-x: hidden;
+            }
+            
+            .interactive-phone-mockup {
+                max-width: 280px;
+                height: auto;
+            }
+            
+            .tech-categories {
+                overflow-x: auto;
+                padding-bottom: 15px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+            }
+        }
+        
+        .content-heading {
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .content-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--android-primary), transparent);
+        }
+        
+        .cta-mini {
+            margin-top: 2rem;
+        }
+        
+        /* Interactive Phone Mockup */
+        .interactive-phone-mockup {
+            width: 100%;
+            max-width: 400px;
+            height: 600px;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .phone-frame {
+            width: 280px;
+            height: 560px;
+            background-color: #121212;
+            border-radius: 30px;
+            border: 8px solid #333;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .android-app {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .app-header {
+            height: 60px;
+            background-color: var(--android-primary);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .app-title {
+            color: var(--android-dark);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .app-content {
+            height: calc(100% - 110px);
+            background-color: #f5f5f5;
+            overflow-y: auto;
+            padding: 16px;
+        }
+        
+        .app-navbar {
+            height: 50px;
+            background-color: #fff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-item {
+            color: #757575;
+            font-size: 1.1rem;
+            padding: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item.active {
+            color: var(--android-primary);
+        }
+        
+        .android-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .android-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .android-card h3 {
+            color: var(--android-dark);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .android-card p {
+            color: #757575;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .android-button {
+            background-color: var(--android-primary);
+            color: var(--android-dark);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .android-button:hover {
+            background-color: var(--android-secondary);
+            color: #fff;
+        }
+        
+        /* Section styling */
+        .mobile-dev-section {
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+        }
+        
+        .mobile-dev-section:nth-child(even) {
+            background: linear-gradient(135deg, #1a1a1a 0%, #121212 100%);
+        }
+        
+        /* Enhanced section titles */
+        .section-title {
+            font-size: 3.2rem;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 2rem;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--android-primary), transparent);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #b0b0b0;
+            font-size: 1.3rem;
+            margin-bottom: 5rem;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+        
+        /* Android features grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(61, 220, 132, 0.15);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(61, 220, 132, 0.3);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(61, 220, 132, 0.1);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--android-primary);
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            background: var(--android-primary);
+            color: var(--android-dark);
+            transform: scale(1.1);
+        }
+        
+        .feature-card h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: #b0b0b0;
+            line-height: 1.7;
+        }
+        
+        /* Header styling to match the image */
+        .site-header {
+            background-color: #121921;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .site-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .logo-vertex {
+            color: #ff0030;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+        
+        .nav-list li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-list li a:hover, 
+        .nav-list li a.active {
+            color: #ff0030;
+        }
+        
+        .services-dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #121921;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            padding: 0.5rem 0;
+            margin-top: 0.5rem;
+            list-style: none;
+        }
+        
+        .services-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .dropdown-menu li a {
+            padding: 0.7rem 1.5rem;
+            display: block;
+            color: white;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        
+        .dropdown-menu li a:hover,
+        .dropdown-menu li a.active {
+            background-color: rgba(255, 0, 48, 0.1);
+            color: #ff0030;
+        }
+        
+        /* Hide mobile menu button and mobile menu for desktop */
+        .mobile-menu-btn,
+        .mobile-menu {
+            display: none;
+        }
+        
+        /* Mobile styles for smaller screens */
+        @media (max-width: 768px) {
+            .nav-list {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 30px;
+                height: 21px;
+                cursor: pointer;
+            }
+            
+            .mobile-menu-btn span {
+                height: 3px;
+                width: 100%;
+                background-color: white;
+                border-radius: 3px;
+                transition: all 0.3s ease;
+            }
+            
+            .mobile-menu-btn.active span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            
+            .mobile-menu-btn.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .mobile-menu-btn.active span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+            
+            .mobile-menu {
+                display: block;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #121921;
+                padding: 1rem 0;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 999;
+            }
+            
+            .mobile-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .mobile-menu ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .mobile-menu li {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .mobile-menu a {
+                display: block;
+                padding: 1rem 2rem;
+                color: white;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            
+            .mobile-menu a:hover,
+            .mobile-menu a.active {
+                color: #ff0030;
+            }
+            
+            .mobile-dropdown-menu {
+                display: none;
+                padding-left: 1rem;
+            }
+            
+            .mobile-dropdown-menu.active {
+                display: block;
+            }
+        }
+
+        /* Update the technologies section to use a grid layout with more visual appeal */
+        .tech-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tech-category {
+            background: rgba(7, 48, 66, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            border-left: 4px solid #3ddc84;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .tech-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(61, 220, 132, 0.2);
+        }
+
+        .tech-category h4 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .tech-category h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: #3ddc84;
+            border-radius: 2px;
+        }
+
+        .tech-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #b0b0b0;
+        }
+
+        .tech-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            transition: all 0.2s ease;
+        }
+
+        .tech-list li:hover {
+            color: #ffffff;
+            transform: translateX(5px);
+        }
+
+        .tech-list li .tech-dot {
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #3ddc84;
+            border-radius: 50%;
+        }
+
+        .tech-list li .tech-name {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .tech-list li .tech-description {
+            display: block;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+
+        /* Category-specific colors */
+        .tech-category:nth-child(1) {
+            border-left-color: #3ddc84; /* Android green */
+        }
+        .tech-category:nth-child(1) h4::after,
+        .tech-category:nth-child(1) .tech-dot {
+            background: #3ddc84;
+        }
+
+        .tech-category:nth-child(2) {
+            border-left-color: #4285f4; /* Google blue */
+        }
+        .tech-category:nth-child(2) h4::after,
+        .tech-category:nth-child(2) .tech-dot {
+            background: #4285f4;
+        }
+
+        .tech-category:nth-child(3) {
+            border-left-color: #fbbc05; /* Google yellow */
+        }
+        .tech-category:nth-child(3) h4::after,
+        .tech-category:nth-child(3) .tech-dot {
+            background: #fbbc05;
+        }
+
+        .tech-category:nth-child(4) {
+            border-left-color: #ea4335; /* Google red */
+        }
+        .tech-category:nth-child(4) h4::after,
+        .tech-category:nth-child(4) .tech-dot {
+            background: #ea4335;
+        }
+
+        .tech-category:nth-child(5) {
+            border-left-color: #34a853; /* Google green */
+        }
+        .tech-category:nth-child(5) h4::after,
+        .tech-category:nth-child(5) .tech-dot {
+            background: #34a853;
+        }
+
+        .tech-category:nth-child(6) {
+            border-left-color: #ab47bc; /* Purple */
+        }
+        .tech-category:nth-child(6) h4::after,
+        .tech-category:nth-child(6) .tech-dot {
+            background: #ab47bc;
+        }
+
+        /* Add back the process steps styling with an improved design */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            background: rgba(7, 48, 66, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 0, 48, 0.15);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #ff0030, #ff003080);
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 700;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #ff0030;
+        }
+
+        .step-content {
+            padding: 2rem;
+        }
+
+        .step-content h3 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .step-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: #ff0030;
+            border-radius: 2px;
+        }
+
+        .step-content p {
+            color: #b0b0b0;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
+    
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <span>Vertex</span>Solutions
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#enhanced-services" class="nav-link">Services</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>      
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="mobile-dropdown">
+                <a href="#" class="active">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="web-development.html">Web Development</a></li>
+                    <li><a href="mobile-app-development.html" class="active">Android Development</a></li>
+                    <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
+                    <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                    <li><a href="ai-solutions.html">AI Solutions</a></li>
+                </ul>
+            </li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section with Phone Mockup -->
+    <section id="android-dev-hero" class="hero inner-page-hero">
+        <div class="container">
+            <div class="split-layout">
+                <div class="hero-content">
+                    <h1 class="content-heading">Android App Development</h1>
+                    <p class="hero-text">We create innovative, high-performance Android applications that delight users and drive business growth. Our expert team leverages the latest Android technologies and best practices to deliver exceptional mobile experiences.</p>
+                    <div class="cta-mini">
+                        <a href="#contact" class="btn btn-primary">Get Started</a>
+                        <a href="#process" class="btn btn-secondary">Our Process</a>
+                    </div>
+                </div>
+                <div class="interactive-phone-mockup">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <div class="android-app">
+                                <div class="app-header">
+                                    <div class="app-title">Vertex App</div>
+                                </div>
+                                <div class="app-content">
+                                    <div class="android-card">
+                                        <h3>Welcome to Android Development</h3>
+                                        <p>Explore the possibilities of cutting-edge mobile applications tailored for your business.</p>
+                                        <button class="android-button">Learn More</button>
+                                    </div>
+                                    <div class="android-card">
+                                        <h3>Native Performance</h3>
+                                        <p>Build high-performance apps that utilize the full power of Android devices.</p>
+                                        <button class="android-button">Explore</button>
+                                    </div>
+                                    <div class="android-card">
+                                        <h3>Material Design</h3>
+                                        <p>Beautiful user interfaces following Google's design guidelines.</p>
+                                        <button class="android-button">View Samples</button>
+                                    </div>
+                                </div>
+                                <div class="app-navbar">
+                                    <div class="nav-item active"><i class="fas fa-home"></i></div>
+                                    <div class="nav-item"><i class="fas fa-search"></i></div>
+                                    <div class="nav-item"><i class="fas fa-heart"></i></div>
+                                    <div class="nav-item"><i class="fas fa-user"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Android Overview Section -->
+        <section id="android-dev-overview" class="mobile-dev-section">
+            <div class="container">
+                <h2 class="section-title" id="main-title" style="display:block !important; visibility:visible !important; word-break:break-word; word-wrap:break-word; overflow:visible; white-space:normal;">Android App Development</h2>
+                <p class="section-subtitle">We create custom Android applications that leverage the full potential of the platform to deliver exceptional user experiences.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fab fa-android"></i>
+                        </div>
+                        <h3>Native Android Development</h3>
+                        <p>Custom applications built with Kotlin and Java that utilize the full capabilities of Android devices while following Google's Material Design guidelines.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Optimized Performance</h3>
+                        <p>High-performance applications that start quickly, run smoothly, and efficiently use device resources to provide a seamless user experience.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tablet-alt"></i>
+                        </div>
+                        <h3>Multi-Device Support</h3>
+                        <p>Responsive applications that work flawlessly across various Android devices including phones, tablets, wearables, and Android TV.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h3>Advanced Integrations</h3>
+                        <p>Seamless integration with device features, third-party services, and APIs to create powerful, feature-rich applications that solve real-world problems.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>Beautiful UI/UX Design</h3>
+                        <p>Intuitive and engaging user interfaces that follow Material Design principles, ensuring a consistent and delightful user experience.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        <h3>Ongoing Support</h3>
+                        <p>Continuous maintenance, updates, and optimizations to ensure your Android application stays current with the latest platform features and security requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Android Technologies Section -->
+        <section id="android-technologies" class="mobile-dev-section alt-bg">
+            <div class="container">
+                <h2 class="section-title" id="tech-title" style="display:block !important; visibility:visible !important; word-break:break-word; word-wrap:break-word; overflow:visible; white-space:normal;">Android Development Technologies</h2>
+                <p class="section-subtitle">We leverage cutting-edge technologies and frameworks to build powerful, scalable Android applications that deliver exceptional user experiences across all device types.</p>
+                
+                <div class="tech-categories">
+                    <div class="tech-category">
+                        <h4>Programming Languages</h4>
+                        <ul class="tech-list">
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Kotlin</span>
+                                <span class="tech-description">Modern, concise and safe programming language officially endorsed by Google</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Java</span>
+                                <span class="tech-description">Robust and widely supported language with extensive libraries</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">C++ (NDK)</span>
+                                <span class="tech-description">For performance-critical components and games</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4>Modern Architecture</h4>
+                        <ul class="tech-list">
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">MVVM</span>
+                                <span class="tech-description">Model-View-ViewModel pattern for clean separation of concerns</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Clean Architecture</span>
+                                <span class="tech-description">Maintainable and testable code structure</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Repository Pattern</span>
+                                <span class="tech-description">Centralized data management</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Dependency Injection</span>
+                                <span class="tech-description">Modular, testable components</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4>UI Frameworks</h4>
+                        <ul class="tech-list">
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Jetpack Compose</span>
+                                <span class="tech-description">Modern declarative UI toolkit</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Material Design Components</span>
+                                <span class="tech-description">Google's design system</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">ConstraintLayout</span>
+                                <span class="tech-description">Flexible and responsive layouts</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Motion Layout</span>
+                                <span class="tech-description">Advanced animations and transitions</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4>Android Jetpack</h4>
+                        <ul class="tech-list">
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Navigation Component</span>
+                                <span class="tech-description">Simplified app navigation</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">LiveData and Flow</span>
+                                <span class="tech-description">Lifecycle-aware data streams</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Room Database</span>
+                                <span class="tech-description">SQLite abstraction layer</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">WorkManager</span>
+                                <span class="tech-description">Background processing</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">ViewModel</span>
+                                <span class="tech-description">UI state management</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4>Networking & Data</h4>
+                        <ul class="tech-list">
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Retrofit</span>
+                                <span class="tech-description">Type-safe REST API client</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">OkHttp</span>
+                                <span class="tech-description">Efficient HTTP client with caching</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Gson/Moshi</span>
+                                <span class="tech-description">Fast JSON serialization/deserialization</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Coroutines</span>
+                                <span class="tech-description">Simplified asynchronous programming</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">RxJava</span>
+                                <span class="tech-description">Reactive programming for event streams</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4>Testing & Quality</h4>
+                        <ul class="tech-list">
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">JUnit</span>
+                                <span class="tech-description">Comprehensive unit testing framework</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Espresso</span>
+                                <span class="tech-description">UI automation testing</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Mockito</span>
+                                <span class="tech-description">Powerful mocking framework</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">Firebase Test Lab</span>
+                                <span class="tech-description">Device testing at scale</span>
+                            </li>
+                            <li>
+                                <span class="tech-dot"></span>
+                                <span class="tech-name">CI/CD integration</span>
+                                <span class="tech-description">Automated build and testing</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Development Process Section -->
+        <section id="process" class="mobile-dev-section">
+            <div class="container">
+                <h2 class="section-title" id="process-title" style="display:block !important; visibility:visible !important; word-break:break-word; word-wrap:break-word; overflow:visible; white-space:normal;">Our Android Development Process</h2>
+                <p class="section-subtitle">A systematic approach to deliver high-quality Android applications that meet your business objectives.</p>
+                <style>
+                    /* Force title to be visible */
+                    #process-title {
+                        display: block !important;
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                    }
+                </style>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>Discovery & Planning</h3>
+                            <p>We begin by understanding your business requirements, target audience, and project goals. Our team analyzes competitors, identifies key features, and creates a detailed project roadmap.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>UI/UX Design</h3>
+                            <p>Our designers create wireframes and interactive prototypes that follow Material Design principles. We ensure intuitive navigation, engaging visuals, and a consistent user experience across all Android devices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>Development</h3>
+                            <p>Our Android developers write clean, maintainable code using Kotlin or Java, following modern architectural patterns. We implement features iteratively with regular client feedback and code reviews.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3>Testing & QA</h3>
+                            <p>Comprehensive testing across multiple devices, screen sizes, and Android versions. We perform functional testing, performance testing, security testing, and usability testing to ensure a flawless application.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">05</div>
+                        <div class="step-content">
+                            <h3>Deployment</h3>
+                            <p>We handle the Google Play Store submission process, ensuring compliance with all platform requirements. Our team also manages beta testing programs to gather early user feedback before full release.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">06</div>
+                        <div class="step-content">
+                            <h3>Post-Launch Support</h3>
+                            <p>Ongoing maintenance, performance monitoring, feature enhancements, and platform updates to keep your Android application running smoothly and securely over time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Android Security Section -->
+        <section id="android-security" class="mobile-dev-section alt-bg">
+            <div class="container">
+                <h2 class="section-title" id="security-title" style="display:block !important; visibility:visible !important; word-break:break-word; word-wrap:break-word; overflow:visible; white-space:normal;">Android App Security</h2>
+                <p class="section-subtitle">We implement comprehensive security measures to protect your application and user data.</p>
+                <style>
+                    /* Force title to be visible and centered */
+                    #security-title, #process-title, #main-title, #tech-title, #features-title {
+                        display: block !important;
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                        text-align: center !important;
+                        margin-left: auto !important;
+                        margin-right: auto !important;
+                        left: 0 !important;
+                        right: 0 !important;
+                        position: relative !important;
+                        float: none !important;
+                        width: 100% !important;
+                        max-width: 100% !important;
+                        box-sizing: border-box !important;
+                        transform: none !important;
+                        clear: both !important;
+                    }
+                    
+                    .container {
+                        text-align: center !important;
+                        padding-left: 15px !important;
+                        padding-right: 15px !important;
+                    }
+                    
+                    /* Additional styling for specific sections */
+                    .mobile-dev-section {
+                        text-align: center !important;
+                    }
+                    
+                    .section-title {
+                        width: 100% !important;
+                        max-width: 100% !important;
+                        text-align: center !important;
+                        left: 0 !important;
+                        right: 0 !important;
+                        position: relative !important;
+                        box-sizing: border-box !important;
+                        margin-left: auto !important;
+                        margin-right: auto !important;
+                        float: none !important;
+                        display: block !important;
+                        transform: none !important;
+                        clear: both !important;
+                    }
+                    
+                    /* Fix section text alignment */
+                    .section-subtitle {
+                        text-align: center !important;
+                        margin-left: auto !important;
+                        margin-right: auto !important;
+                        width: 100% !important;
+                        max-width: 800px !important;
+                    }
+                    
+                    /* Fix font sizing for narrow screens */
+                    @media (max-width: 1024px) {
+                        .section-title {
+                            font-size: 2rem !important;
+                            padding-left: 10px !important;
+                            padding-right: 10px !important;
+                            hyphens: auto !important;
+                            overflow-wrap: break-word !important;
+                            word-wrap: break-word !important;
+                        }
+                    }
+                </style>
+                
+                <div class="security-methodology">
+                    <div class="security-step">
+                        <div class="step-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Secure Authentication</h3>
+                        <p>Implementation of secure authentication mechanisms including biometric authentication, multi-factor authentication, and OAuth integrations.</p>
+                    </div>
+                    
+                    <div class="security-step">
+                        <div class="step-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Data Encryption</h3>
+                        <p>End-to-end encryption for sensitive data both at rest and in transit using Android Keystore system and modern cryptographic algorithms.</p>
+                    </div>
+                    
+                    <div class="security-step">
+                        <div class="step-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Secure Coding Practices</h3>
+                        <p>Following OWASP mobile security guidelines and Android security best practices to protect against common vulnerabilities.</p>
+                    </div>
+                    
+                    <div class="security-step">
+                        <div class="step-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Privacy Protection</h3>
+                        <p>Implementing privacy by design principles, minimizing data collection, and ensuring compliance with GDPR, CCPA, and other privacy regulations.</p>
+                    </div>
+                    
+                    <div class="security-step">
+                        <div class="step-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h3>Security Testing</h3>
+                        <p>Regular security audits, penetration testing, and vulnerability assessments to identify and address potential security issues before release.</p>
+                    </div>
+                    
+                    <div class="security-step">
+                        <div class="step-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Regular Updates</h3>
+                        <p>Proactive monitoring for security vulnerabilities and timely updates to address emerging threats and platform security changes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Advanced Features Section -->
+        <section id="advanced-features" class="mobile-dev-section">
+            <div class="container">
+                <h2 class="section-title" id="features-title" style="display:block !important; visibility:visible !important; word-break:break-word; word-wrap:break-word; overflow:visible; white-space:normal;">Advanced Android App Features</h2>
+                <p class="section-subtitle">Enhance your application with cutting-edge Android capabilities to provide exceptional user experiences.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                        <h3>AR & VR Integration</h3>
+                        <p>Immersive augmented reality and virtual reality experiences using ARCore to create interactive, engaging content for your users.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3>AI & Machine Learning</h3>
+                        <p>Integration of ML Kit and TensorFlow Lite to add intelligent features like image recognition, natural language processing, and predictive analytics.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3>Location & Maps</h3>
+                        <p>Advanced location-based services using Google Maps API, geofencing, and real-time location tracking for navigation and proximity features.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Offline Capabilities</h3>
+                        <p>Robust offline functionality allowing users to access content and perform actions even without an internet connection with seamless data synchronization.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Real-time Messaging</h3>
+                        <p>Integrate real-time chat, video calls, and push notifications using Firebase Cloud Messaging and WebRTC to enable instant communication.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3>Secure Payments</h3>
+                        <p>Integration of Google Pay, Stripe, PayPal, and other payment gateways to enable secure, frictionless in-app purchases and subscriptions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section id="android-dev-cta" class="mobile-dev-section alt-bg">
+            <div class="container">
+                <div class="cta-content">
+                    <div class="cta-text">
+                        <p class="cta-message">Let's discuss how we can bring your app idea to life with our expert Android development services.</p>
+                    </div>
+                    <div class="cta-action">
+                        <a href="contact.html" class="cta-btn primary">Get Started</a>
+                        <a href="portfolio.html" class="cta-btn secondary">View Our Work</a>
+                    </div>
+                </div>
+            </div>
+            <style>
+                /* Enhanced CTA Section Styling */
+                #android-dev-cta {
+                    padding: 5rem 2rem;
+                    background: linear-gradient(135deg, #121212, #1e1e1e);
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                #android-dev-cta::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzEyMTIxMiI+PC9yZWN0Pgo8Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIyIiBmaWxsPSIjMmEyYTJhIj48L2NpcmNsZT4KPC9zdmc+');
+                    opacity: 0.4;
+                    z-index: 0;
+                }
+                
+                .cta-content {
+                    max-width: 900px;
+                    margin: 0 auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    position: relative;
+                    z-index: 1;
+                }
+                
+                .cta-message {
+                    font-size: 2rem;
+                    line-height: 1.4;
+                    color: #ffffff;
+                    margin-bottom: 2.5rem;
+                    font-weight: 300;
+                    letter-spacing: 0.5px;
+                }
+                
+                .cta-action {
+                    display: flex;
+                    gap: 1.5rem;
+                    margin-top: 1rem;
+                }
+                
+                .cta-btn {
+                    display: inline-block;
+                    padding: 14px 32px;
+                    border-radius: 4px;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                    z-index: 1;
+                }
+                
+                .cta-btn::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 0%;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    transition: all 0.3s ease;
+                    z-index: -1;
+                }
+                
+                .cta-btn:hover::before {
+                    height: 100%;
+                }
+                
+                .cta-btn.primary {
+                    background-color: #ff0030;
+                    color: #ffffff;
+                    box-shadow: 0 4px 14px rgba(255, 0, 48, 0.4);
+                }
+                
+                .cta-btn.secondary {
+                    background-color: transparent;
+                    color: #ffffff;
+                    border: 2px solid #ffffff;
+                }
+                
+                .cta-btn:hover {
+                    transform: translateY(-5px);
+                }
+                
+                .cta-btn.primary:hover {
+                    box-shadow: 0 6px 20px rgba(255, 0, 48, 0.6);
+                }
+                
+                .cta-btn.secondary:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+                
+                @media screen and (max-width: 768px) {
+                    .cta-message {
+                        font-size: 1.5rem;
+                    }
+                    
+                    .cta-action {
+                        flex-direction: column;
+                        width: 100%;
+                        max-width: 300px;
+                    }
+                    
+                    .cta-btn {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            </style>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span>Vertex</span>Solutions
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#enhanced-services">Services</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Software Development</a></li>
+                        <li><a href="mobile-app-development.html">Mobile Apps</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:vertexsolution70@gmail.com">Email Us</a></li>
+                        <li><a href="tel:+15551234567">Call Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Vertex Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-to-top">
+        <div class="scroll-text">Scroll To Top</div>
+        <div class="scroll-line-container">
+            <div class="scroll-line"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Initialize scroll to top functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopBtn = document.querySelector('.scroll-to-top');
+            const scrollLine = document.querySelector('.scroll-line');
+            let isActive = false;
+            
+            function updateScrollIndicator() {
+                const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+                const scrollLineHeight = Math.min(scrollPercent * 100, 100);
+                
+                if (scrollLine) {
+                    scrollLine.style.height = `${scrollLineHeight}%`;
+                }
+                
+                // Show/hide scroll to top button based on scroll position
+                if (window.scrollY > 500) {
+                    scrollToTopBtn.classList.add('visible');
+                    
+                    if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 100) {
+                        if (!isActive) {
+                            scrollToTopBtn.classList.add('active');
+                            isActive = true;
+                        }
+                    } else {
+                        if (isActive) {
+                            scrollToTopBtn.classList.remove('active');
+                            isActive = false;
+                        }
+                    }
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                }
+            }
+            
+            // Initialize scroll indicator
+            window.addEventListener('scroll', updateScrollIndicator);
+            updateScrollIndicator();
+            
+            // Scroll to top on click
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    menuToggle.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        // Animated phone mockup interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.app-navbar .nav-item');
+            
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    navItems.forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Android cards animation
+            const androidCards = document.querySelectorAll('.android-card');
+            
+            androidCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+            
+            // Simulate typing animation for a more interactive demo
+            const animateTyping = () => {
+                const cards = document.querySelectorAll('.android-card');
+                const messages = [
+                    'Building amazing Android apps...',
+                    'Optimizing performance...',
+                    'Implementing Material Design...',
+                    'Testing across devices...',
+                    'Ready for Google Play!'
+                ];
+                
+                let currentCard = 0;
+                let currentMessage = 0;
+                
+                setInterval(() => {
+                    const card = cards[currentCard];
+                    const message = messages[currentMessage];
+                    
+                    if (card && card.querySelector('p')) {
+                        card.querySelector('p').textContent = message;
+                    }
+                    
+                    currentMessage = (currentMessage + 1) % messages.length;
+                    if (currentMessage === 0) {
+                        currentCard = (currentCard + 1) % cards.length;
+                    }
+                }, 3000);
+            };
+            
+            animateTyping();
+        });
+    </script>
+</body>
+</html>

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initScrollHeader();
     initScrollToTop();
+    initTeamModal();
 });
 
 // Page Transitions
@@ -153,7 +154,7 @@ function initScrollToTop() {
             scrollLine.style.height = `${scrollProgress}%`;
             
             // Show/hide the scroll button
-            if (scrolled > 500) {
+            if (scrolled > 200) {
                 scrollToTopBtn.classList.add('visible');
             } else {
                 scrollToTopBtn.classList.remove('visible');
@@ -168,5 +169,132 @@ function initScrollToTop() {
                 behavior: 'smooth'
             });
         });
+        
+        // Add cursor interaction for better integration with site design
+        scrollToTopBtn.addEventListener('mouseenter', () => {
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            
+            if (cursor && cursorFollower) {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.3)';
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('mouseleave', () => {
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            
+            if (cursor && cursorFollower) {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
+            }
+        });
+        
+        // Trigger initial scroll event to set correct state
+        window.dispatchEvent(new Event('scroll'));
     }
+}
+
+// Team Member Modal
+function initTeamModal() {
+    const modal = document.getElementById('teamModal');
+    const closeBtn = modal.querySelector('.close-modal');
+    const teamMembers = document.querySelectorAll('.team-member');
+    
+    // Team member data
+    const teamData = {
+        'asad-ullah': {
+          name: 'Asad Ullah',
+          position: 'CEO & Founder',
+          bio: 'Visionary leader with 15+ years of experience in tech innovation...',
+          image: './src/images/popup_team/asad.jpg',
+          social: {
+            linkedin: 'https://www.linkedin.com/in/asad-ullah-qadir-32081b172/',
+            github: 'https://github.com/Asadullahqadir-1',
+            portfolio: 'https://asadullahqadir-1.github.io/portfolio_website/#portfolio'
+          }
+        },
+        'muhammad-haider': {
+          name: 'Muhammad Haider',
+          position: 'CTO',
+          bio: 'Tech innovator specializing in AI and ML...',
+          image: './src/images/popup_team/haider.jpg',
+          social: {
+            linkedin: 'https://www.linkedin.com/in/mhaiderali2710/',
+            github: 'https://github.com/Haiderali27-hub',
+            portfolio: 'https://haiderali27-hub.github.io/my-portfolio/'
+          }
+        },
+        'ghulam-mustafa': {
+          name: 'Ghulam Mustafa',
+          position: 'Lead Developer',
+          bio: 'Full-stack expert with a passion for scalable solutions...',
+          image: './src/images/popup_team/gm.png',
+          social: {
+            linkedin: 'https://www.linkedin.com/in/ghulammustafa06/',
+            github: 'https://github.com/mustafaghulam',
+            portfolio: 'https://mustafaghulam.com'
+          }
+        },
+        'zohaib-iqbal': {
+          name: 'Zohaib Iqbal',
+          position: 'UI/UX Designer',
+          bio: 'Creative designer focused on exceptional UX...',
+          image: './src/images/popup_team/zohaib.jpg',
+          social: {
+            linkedin: 'https://www.linkedin.com/in/zohaib-iqbal-a490332a9/',
+            github: 'https://github.com/Zohaibiqbal797',
+            portfolio: 'https://zohaibiqbal.com'
+          }
+        }
+      };
+      
+    teamMembers.forEach(member => {
+        member.addEventListener('click', (e) => {
+            e.preventDefault(); // ✅ This stops the scroll-to-top behavior
+    
+            const memberId = member.getAttribute('data-member');
+            const data = teamData[memberId];
+            
+            // Update modal content
+            modal.querySelector('.modal-image img').src = data.image;
+            modal.querySelector('.modal-name').textContent = data.name;
+            modal.querySelector('.modal-position').textContent = data.position;
+            modal.querySelector('.modal-bio').textContent = data.bio;
+    
+            // Update social links
+            const socialLinks = modal.querySelectorAll('.modal-social-link');
+            socialLinks[0].href = data.social.linkedin;
+            socialLinks[1].href = data.social.github;
+            socialLinks[2].href = data.social.portfolio;
+    
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+
+    // Close modal
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    // Close on outside click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 } 

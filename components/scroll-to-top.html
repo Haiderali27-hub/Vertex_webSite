@@ -1,0 +1,109 @@
+<!-- Scroll-to-top Component -->
+<div class="scroll-to-top">
+    <div class="scroll-text">Scroll To Top</div>
+    <div class="scroll-line-container">
+        <div class="scroll-line"></div>
+    </div>
+</div>
+
+<style>
+    .scroll-to-top {
+        position: fixed;
+        right: 40px;
+        bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 99;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        cursor: pointer;
+    }
+
+    .scroll-to-top.visible {
+        opacity: 1;
+    }
+
+    .scroll-text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+        letter-spacing: 1px;
+        font-size: 10px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        font-weight: 500;
+        opacity: 0.9;
+        line-height: 1.6;
+        white-space: nowrap;
+    }
+
+    .scroll-line-container {
+        position: relative;
+        width: 1px;
+        height: 80px;
+        margin-top: 5px;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .scroll-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        background-color: var(--text-color);
+        height: 0%;
+        transition: height 0.1s linear;
+    }
+
+    .scroll-to-top:hover .scroll-line {
+        background-color: var(--primary-color);
+    }
+
+    .scroll-to-top:hover .scroll-text {
+        color: var(--primary-color);
+    }
+
+    @media screen and (max-width: 768px) {
+        .scroll-to-top {
+            left: -30px;
+            bottom: 50%;
+            transform: translateY(-50%);
+            height: auto;
+            width: auto;
+            background-color: var(--bg-color);
+            padding: 10px;
+            border-radius: 0 4px 4px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: none;
+            transition: left 0.3s ease;
+        }
+
+        .scroll-to-top.visible {
+            left: 0;
+        }
+
+        .scroll-to-top.active {
+            left: 0;
+        }
+
+        .scroll-text, .scroll-line-container {
+            display: none;
+        }
+
+        .scroll-to-top::after {
+            content: '→';
+            font-size: 20px;
+            color: var(--text-color);
+        }
+
+        .scroll-to-top.active::after {
+            content: '↑';
+        }
+
+        .scroll-to-top:hover::after {
+            color: var(--primary-color);
+        }
+    }
+</style>

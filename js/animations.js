@@ -179,4 +179,94 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
-}); 
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if device is mobile
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    
+    if (!isMobile) {
+        // Only run animations on desktop
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const slideRightElements = document.querySelectorAll('.slide-in-right');
+        
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+        
+        slideRightElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+        
+        // Stats counter animation
+        const statElements = document.querySelectorAll('.stat-number');
+        
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const countTo = parseInt(target.getAttribute('data-count'));
+                    let count = 0;
+                    const speed = 2000 / countTo;
+                    
+                    function updateCount() {
+                        if (count < countTo) {
+                            count++;
+                            target.textContent = count;
+                            requestAnimationFrame(updateCount);
+                        }
+                    }
+                    
+                    updateCount();
+                    statsObserver.unobserve(target);
+                }
+            });
+        }, { threshold: 0.7 });
+        
+        statElements.forEach(element => {
+            statsObserver.observe(element);
+        });
+    } else {
+        // For mobile: show elements immediately without animations
+        document.querySelectorAll('.fade-in, .slide-in-right').forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+        });
+        
+        // For stats, set final numbers immediately
+        document.querySelectorAll('.stat-number').forEach(el => {
+            el.textContent = el.getAttribute('data-count');
+        });
+    }
+    
+    // Enhanced Services Card Staggered Animation
+    const enhancedServiceCards = document.querySelectorAll('.service-card-advanced');
+    
+    enhancedServiceCards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.15}s`;
+    });
+    
+    // Service Tech Sphere Animation
+    const techDots = document.querySelectorAll('.tech-dot');
+    techDots.forEach((dot, index) => {
+        dot.addEventListener('mouseenter', function() {
+            dot.style.transform = 'scale(1.2)';
+            dot.style.backgroundColor = 'rgba(255, 0, 53, 0.2)';
+            dot.style.zIndex = '10';
+        });
+        
+        dot.addEventListener('mouseleave', function() {
+            dot.style.transform = '';
+            dot.style.backgroundColor = '';
+            dot.style.zIndex = '';
+        });
+    });
+});

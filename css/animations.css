@@ -245,4 +245,46 @@
     opacity: 0;
     animation: slideInRight 1s forwards;
     animation-delay: 0.8s;
-} 
+}
+
+/* Disable animations on mobile */
+@media screen and (max-width: 768px) {
+    .fade-in,
+    .slide-in-right,
+    .animated-title,
+    .animated-subtitle,
+    .service-card-advanced,
+    .project-card-3d,
+    .tech-category,
+    .contact-form-wrapper,
+    .contact-info-wrapper,
+    .form-group-3d,
+    .contact-info-item,
+    .social-links-3d,
+    .floating-shape,
+    .shape,
+    .tech-dot,
+    .code-particle,
+    .code-string {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .project-card-3d:hover,
+    .tech-category:hover,
+    .service-card-advanced:hover,
+    .contact-info-item:hover,
+    .input-container:focus-within {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .btn-3d:hover,
+    .project-btn:hover,
+    .service-cta:hover,
+    .social-link-3d:hover {
+        transform: none !important;
+    }
+}
