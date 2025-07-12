@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cursor.css">
     <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/scroll-animations.css">
     <link rel="stylesheet" href="css/globe.css">
     <script src="js/component-loader.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,13 +21,15 @@
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
     <div class="animated-background"></div>
+    <div class="mobile-menu-overlay"></div>
 
     <!-- Include Header -->
     <div id="header-component">
         <header>
             <nav>
                 <div class="logo">
-                    <span>Vertex</span>Solutions
+                    <img src="src/images/logos/PNG - logo transparent.png" alt="Vertex Solution Logo" class="header-logo-img">
+                    <span>Vertex</span>Solution
                 </div>
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-link">Home</a></li>
@@ -45,10 +48,10 @@
     </div>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-text-animated">
-                <h1 class="animated-title">Innovative</h1>
-                <h1 class="animated-title">Solutions</h1>
+        <section id="home" class="hero parallax-bg">
+            <div class="hero-text-animated animate-slide-up">
+                <h1 class="animated-title text-reveal">Innovative</h1>
+                <h1 class="animated-title text-reveal">Solutions</h1>
                 <style>
                     @media screen and (max-width: 768px) {
                         .animated-title {
@@ -58,48 +61,48 @@
                     }
                 </style>
                 <p class="subtitle animated-subtitle">Transforming ideas into digital reality</p>
-                <div class="cta-buttons">
-                    <a href="#enhanced-services" class="btn primary-btn">Our Services</a>
-                    <a href="#contact" class="btn secondary-btn">Get in Touch</a>
+                <div class="cta-buttons animate-slide-up">
+                    <a href="#enhanced-services" class="btn primary-btn pulse-cta magnetic">Our Services</a>
+                    <a href="#contact" class="btn secondary-btn magnetic">Get in Touch</a>
                 </div>
             </div>
         </section>
 
         <section id="about" class="about">
-            <h2 class="section-title">About Us</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="fade-in">Vertex Solutions is a cutting-edge tech outsourcing company specializing in
+            <h2 class="section-title animate-slide-up">About Us</h2>
+            <div class="about-content animate-stagger">
+                <div class="about-text stagger-item">
+                    <p class="fade-in animate-slide-left">Vertex Solutions is a cutting-edge tech outsourcing company specializing in
                         delivering innovative solutions. Our team of experts combines creativity with technical
                         expertise to transform your ideas into reality.</p>
-                    <p class="fade-in">With a focus on quality and innovation, we've helped businesses across various
+                    <p class="fade-in animate-slide-left">With a focus on quality and innovation, we've helped businesses across various
                         industries achieve their digital transformation goals. Our commitment to excellence and customer
                         satisfaction has made us a trusted partner for companies worldwide.</p>
-                    <div class="about-features fade-in">
-                        <div class="feature">
+                    <div class="about-features fade-in animate-slide-left">
+                        <div class="feature hover-lift">
                             <i class="fas fa-check-circle"></i>
                             <span>Industry-Leading Expertise</span>
                         </div>
-                        <div class="feature">
+                        <div class="feature hover-lift">
                             <i class="fas fa-check-circle"></i>
                             <span>Innovative Solutions</span>
                         </div>
-                        <div class="feature">
+                        <div class="feature hover-lift">
                             <i class="fas fa-check-circle"></i>
                             <span>24/7 Support</span>
                         </div>
                     </div>
                 </div>
-                <div class="stats-container">
-                    <div class="stat-item fade-in">
+                <div class="stats-container stagger-item animate-slide-right">
+                    <div class="stat-item fade-in animate-scale">
                         <span class="stat-number" data-count="12">0</span>
                         <span class="stat-label">Projects Completed</span>
                     </div>
-                    <div class="stat-item fade-in">
+                    <div class="stat-item fade-in animate-scale">
                         <span class="stat-number" data-count="10">0</span>
                         <span class="stat-label">Team Members</span>
                     </div>
-                    <div class="stat-item fade-in">
+                    <div class="stat-item fade-in animate-scale">
                         <span class="stat-number" data-count="5">0</span>
                         <span class="stat-label">Years Experience</span>
                     </div>
@@ -108,10 +111,10 @@
         </section>
 
         <section id="team" class="team">
-            <h2 class="section-title">Our Team</h2>
-            <div class="team-grid">
-                <div class="team-member fade-in" data-member="asad-ullah">
-                    <div class="member-image">
+            <h2 class="section-title animate-slide-up">Our Team</h2>
+            <div class="team-grid fade-in-stagger animate-stagger">
+                <div class="team-member fade-in stagger-item hover-lift magnetic" data-member="asad-ullah">
+                    <div class="member-image image-reveal">
                         <img src="./src/images/team/asad.jpg" alt="asad">
                         <div class="member-overlay">
                             <div class="social-links">
@@ -125,8 +128,8 @@
                         <p>Visionary leader with 4+ years of experience in tech innovation.</p>
                     </div>
                 </div>
-                <div class="team-member fade-in" data-member="muhammad-haider">
-                    <div class="member-image">
+                <div class="team-member fade-in stagger-item hover-lift magnetic" data-member="muhammad-haider">
+                    <div class="member-image image-reveal">
                         <img src="./src//images/team/haider.jpg" alt="haider">
                         <div class="member-overlay">
                             <div class="social-links">
@@ -140,8 +143,8 @@
                         <p>Tech innovator specializing in AI and machine learning solutions.</p>
                     </div>
                 </div>
-                <!-- <div class="team-member fade-in" data-member="ghulam-mustafa">
-                    <div class="member-image">
+                <!-- <div class="team-member fade-in stagger-item hover-lift magnetic" data-member="ghulam-mustafa">
+                    <div class="member-image image-reveal">
                         <img src="./src/images/team/gm.png" alt="Ghulam">
                         <div class="member-overlay">
                             <div class="social-links">
@@ -155,8 +158,8 @@
                         <p>Full-stack expert with a passion for creating scalable solutions.</p>
                     </div>
                 </div> -->
-                <div class="team-member fade-in" data-member="zohaib-iqbal">
-                    <div class="member-image">
+                <div class="team-member fade-in stagger-item hover-lift magnetic" data-member="zohaib-iqbal">
+                    <div class="member-image image-reveal">
                         <img src="./src/images/team/zohaib.jpg" alt="zohaib">
                         <div class="member-overlay">
                             <div class="social-links">
@@ -194,12 +197,12 @@
         </section>
 
         <section id="enhanced-services" class="enhanced-services">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle fade-in">Cutting-edge solutions for modern business challenges</p>
+            <h2 class="section-title animate-slide-up">Our Services</h2>
+            <p class="section-subtitle fade-in animate-slide-up">Cutting-edge solutions for modern business challenges</p>
 
-            <div class="services-container">
-                <div class="service-card-advanced fade-in">
-                    <div class="service-icon-container">
+            <div class="services-container fade-in-stagger animate-stagger">
+                <div class="service-card-advanced fade-in stagger-item hover-lift glow-effect magnetic">
+                    <div class="service-icon-container floating">
                         <div class="service-icon">
                             <i class="fas fa-laptop-code"></i>
                         </div>
@@ -215,12 +218,12 @@
                         <li><i class="fas fa-check"></i> E-commerce Solutions</li>
                         <li><i class="fas fa-check"></i> Web Security Implementation</li>
                     </ul>
-                    <a href="page/web-development.html" class="service-cta" target="_blank">Learn More <i
+                    <a href="page/web-development.html" class="service-cta magnetic" target="_blank">Learn More <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <div class="service-card-advanced fade-in">
-                    <div class="service-icon-container">
+                <div class="service-card-advanced fade-in stagger-item hover-lift glow-effect magnetic">
+                    <div class="service-icon-container floating">
                         <div class="service-icon">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
@@ -233,12 +236,12 @@
                         <li><i class="fas fa-check"></i> Intuitive Interfaces</li>
                         <li><i class="fas fa-check"></i> Advanced Analytics</li>
                     </ul>
-                    <a href="page/mobile-app-development.html" class="service-cta">Learn More <i
+                    <a href="page/mobile-app-development.html" class="service-cta magnetic">Learn More <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <div class="service-card-advanced fade-in">
-                    <div class="service-icon-container">
+                <div class="service-card-advanced fade-in stagger-item hover-lift glow-effect magnetic">
+                    <div class="service-icon-container floating">
                         <div class="service-icon">
                             <i class="fas fa-paint-brush"></i>
                         </div>
@@ -252,11 +255,11 @@
                         <li><i class="fas fa-check"></i> Interactive Prototyping</li>
                         <li><i class="fas fa-check"></i> Accessibility Focus</li>
                     </ul>
-                    <a href="/page/UI_UX.html   " class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="/page/UI_UX.html   " class="service-cta magnetic">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <div class="service-card-advanced fade-in">
-                    <div class="service-icon-container">
+                <div class="service-card-advanced fade-in stagger-item hover-lift glow-effect magnetic">
+                    <div class="service-icon-container floating">
                         <div class="service-icon">
                             <i class="fas fa-brain"></i>
                         </div>
@@ -270,13 +273,13 @@
                         <li><i class="fas fa-check"></i> Natural Language Processing</li>
                         <li><i class="fas fa-check"></i> Computer Vision</li>
                     </ul>
-                    <a href="#contact" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="service-cta magnetic">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
 
 
-                <div class="service-card-advanced fade-in">
-                    <div class="service-icon-container">
+                <div class="service-card-advanced fade-in stagger-item hover-lift glow-effect magnetic">
+                    <div class="service-icon-container floating">
                         <div class="service-icon">
                             <i class="fas fa-code"></i>
                         </div>
@@ -290,10 +293,10 @@
                         <li><i class="fas fa-check"></i> Agile Methodology</li>
                         <li><i class="fas fa-check"></i> Cloud Integration</li>
                     </ul>
-                    <a href="#contact" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="service-cta magnetic">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card-advanced fade-in">
-                    <div class="service-icon-container">
+                <div class="service-card-advanced fade-in stagger-item hover-lift glow-effect magnetic">
+                    <div class="service-icon-container floating">
                         <div class="service-icon">
                             <i class="fas fa-cloud"></i>
                         </div>
@@ -306,29 +309,29 @@
                         <li><i class="fas fa-check"></i> Migration Services</li>
                         <li><i class="fas fa-check"></i> DevOps Integration</li>
                     </ul>
-                    <a href="#contact" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="service-cta magnetic">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <div class="services-tech-sphere fade-in">
+            <div class="services-tech-sphere fade-in animate-scale">
                 <div class="tech-orbit">
-                    <div class="tech-dot"><span>AI</span></div>
-                    <div class="tech-dot"><span>IoT</span></div>
-                    <div class="tech-dot"><span>Cloud</span></div>
-                    <div class="tech-dot"><span>DevOps</span></div>
-                    <div class="tech-dot"><span>Mobile</span></div>
+                    <div class="tech-dot floating magnetic"><span>AI</span></div>
+                    <div class="tech-dot floating magnetic"><span>IoT</span></div>
+                    <div class="tech-dot floating magnetic"><span>Cloud</span></div>
+                    <div class="tech-dot floating magnetic"><span>DevOps</span></div>
+                    <div class="tech-dot floating magnetic"><span>Mobile</span></div>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="projects">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-container">
-                <div class="project-card-3d">
+            <h2 class="section-title animate-slide-up">Featured Projects</h2>
+            <div class="projects-container fade-in-stagger animate-stagger">
+                <div class="project-card-3d stagger-item hover-lift magnetic">
                     <div class="project-card-inner">
                         <div class="project-card-front">
                             <div class="project-thumbnail"
-                                style="background-image: url('src/images/projects/sound-spot.jpg');"></div>
+                                style="background-image: url('src/images/projects/soundpot1.png')"></div>
                             <div class="project-overlay">
                                 <h3>Sound Spot</h3>
                             </div>
@@ -352,42 +355,40 @@
                                     </div>
                                 </div>
                                 <a href="https://github.com/Asadullahqadir-1/sound-spot-music-web-application"
-                                    class="btn project-btn" target="_blank">View Project</a>
+                                    class="btn project-btn magnetic" target="_blank">View Project</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card-3d">
+                <div class="project-card-3d stagger-item hover-lift magnetic">
                     <div class="project-card-inner">
                         <div class="project-card-front">
                             <div class="project-thumbnail"
-                                style="background-image: url('src/images/projects/movie-search.jpg');"></div>
+                                style="background-image: url('src/images/projects/ecommerce.jpg'); background-size: cover; background-position: center;"></div>
                             <div class="project-overlay">
-                                <h3>Movie Search App</h3>
+                                <h3>Hassan Cloth Store</h3>
                             </div>
                         </div>
                         <div class="project-card-back">
                             <div class="project-details">
-                                <h3>Movie Search App</h3>
+                                <h3>Hassan Cloth Store</h3>
                                 <div class="project-tags">
-                                    <span>React</span>
-                                    <span>OMDB API</span>
-                                    <span>Styled Components</span>
+                                    <span>Shopify</span>
+                                    <span>E-commerce</span>
+                                    <span>Fashion</span>
                                 </div>
-                                <p>A single-page React application that allows users to search for movies using the OMDB
-                                    API. Features include real-time search, movie details display, and a responsive
-                                    design using styled-components.</p>
+                                <p>A premium online clothing store built on Shopify platform, featuring modern fashion collections, seamless shopping experience, secure payments, and responsive design for optimal mobile and desktop browsing.</p>
                                 <div class="project-tech">
                                     <span class="tech-label">Technologies:</span>
                                     <div class="tech-icons">
-                                        <i class="fab fa-react" title="React.js"></i>
-                                        <i class="fab fa-js" title="JavaScript"></i>
+                                        <i class="fab fa-shopify" title="Shopify"></i>
                                         <i class="fab fa-css3" title="CSS3"></i>
+                                        <i class="fab fa-js" title="JavaScript"></i>
                                     </div>
                                 </div>
-                                <a href="https://github.com/Asadullahqadir-1/Movie-Search-Sysytem"
-                                    class="btn project-btn" target="_blank">View Project</a>
+                                <a href="https://hassancloth.myshopify.com/"
+                                    class="btn project-btn magnetic" target="_blank">Visit Store</a>
                             </div>
                         </div>
                     </div>
@@ -395,7 +396,7 @@
 
                 
 
-                <div class="project-card-3d">
+                <div class="project-card-3d stagger-item hover-lift magnetic">
                     <div class="project-card-inner">
                         <div class="project-card-front">
                             <div class="project-thumbnail"
@@ -422,7 +423,7 @@
                                         <i class="fab fa-stripe" title="Stripe"></i>
                                     </div>
                                 </div>
-                                <a href="#" class="btn project-btn">View Case Study</a>
+                                <a href="#" class="btn project-btn magnetic">View Case Study</a>
                             </div>
                         </div>
                     </div>
@@ -632,11 +633,11 @@
                     <div class="shape shape-2"></div>
                     <div class="shape shape-3"></div>
                 </div>
-                <h2 class="section-title">Get in Touch</h2>
-                <div class="contact-3d-container">
-                    <div class="contact-card">
-                        <div class="contact-form-wrapper">
-                            <h3 class="contact-subtitle">Send Us a Message</h3>
+                <h2 class="section-title animate-slide-up">Get in Touch</h2>
+                <div class="contact-3d-container animate-stagger">
+                    <div class="contact-card stagger-item hover-lift glow-effect">
+                        <div class="contact-form-wrapper animate-slide-left">
+                            <h3 class="contact-subtitle line-animate">Send Us a Message</h3>
                             <form class="contact-form-3d" id="contactForm">
                                 <div class="form-group-3d">
                                     <div class="input-container">
@@ -662,16 +663,16 @@
                                         <textarea id="message" placeholder="Your Message" required></textarea>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn-3d">
+                                <button type="submit" class="btn-3d btn-advanced magnetic">
                                     <span class="btn-text">Send Message</span>
                                     <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
                                 </button>
                             </form>
                         </div>
-                        <div class="contact-info-wrapper">
-                            <h3 class="contact-subtitle">Contact Information</h3>
+                        <div class="contact-info-wrapper animate-slide-right">
+                            <h3 class="contact-subtitle line-animate">Contact Information</h3>
                             <div class="contact-info-items">
-                                <div class="contact-info-item">
+                                <div class="contact-info-item hover-lift">
                                     <div class="info-icon">
                                         <i class="fas fa-map-marker-alt"></i>
                                     </div>
@@ -680,7 +681,7 @@
                                         <p>Islamabad, Pakistan</p>
                                     </div>
                                 </div>
-                                <div class="contact-info-item">
+                                <div class="contact-info-item hover-lift">
                                     <div class="info-icon whatsapp-icon" style="background: rgba(255, 0, 48, 0.1);">
                                         <a href="https://wa.me/923554995103" target="_blank" style="color: #ff0030;">
                                             <i class="fab fa-whatsapp"></i>
@@ -692,7 +693,7 @@
                                                 style="color: #ff0030; text-decoration: none;">+923554995103</a></p>
                                     </div>
                                 </div>
-                                <div class="contact-info-item">
+                                <div class="contact-info-item hover-lift">
                                     <div class="info-icon">
                                         <a href="mailto:vertexsolution70@gmail.com" style="color: #ff0030;">
                                             <i class="fas fa-envelope"></i>
@@ -707,17 +708,17 @@
                                 </div>
                             </div>
                             <div class="social-links-3d">
-                                <a href="#" class="social-link-3d">
+                                <a href="#" class="social-link-3d magnetic">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <!-- <a href="#" class="social-link-3d">
+                                <!-- <a href="#" class="social-link-3d magnetic">
                                     <i class="fab fa-twitter"></i>
                                 </a> -->
-                                <a href="https://github.com/Haiderali27-hub" class="social-link-3d">
+                                <a href="https://github.com/Haiderali27-hub" class="social-link-3d magnetic">
                                     <i class="fab fa-github"></i>
                                 </a>
                                 <a href="https://www.instagram.com/vertex_sol?igsh=MzU3aGgyc2dvdDZx" target="_blank"
-                                    class="social-link-3d">
+                                    class="social-link-3d magnetic">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                             </div>

@@ -104,12 +104,50 @@ function initCounters() {
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
+    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+    const body = document.body;
+    
+    console.log('Mobile menu init:', { menuToggle, navLinks, mobileOverlay }); // Debug log
     
     if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
+        // Toggle menu function
+        function toggleMenu() {
+            const isActive = menuToggle.classList.contains('active');
+            console.log('Toggle menu called, isActive:', isActive); // Debug log
+            
+            if (isActive) {
+                // Close menu
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                if (mobileOverlay) mobileOverlay.classList.remove('active');
+                body.classList.remove('menu-open');
+            } else {
+                // Open menu
+                menuToggle.classList.add('active');
+                navLinks.classList.add('active');
+                if (mobileOverlay) mobileOverlay.classList.add('active');
+                body.classList.add('menu-open');
+            }
+        }
+        
+        // Menu toggle click with touch support
+        menuToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Menu toggle clicked'); // Debug log
+            toggleMenu();
         });
+        
+        // Add touch support for mobile
+        menuToggle.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            console.log('Menu toggle touched'); // Debug log
+            toggleMenu();
+        });
+        
+        // Overlay click to close menu
+        if (mobileOverlay) {
+            mobileOverlay.addEventListener('click', toggleMenu);
+        }
         
         // Close menu when clicking on links
         const links = navLinks.querySelectorAll('a');
@@ -117,7 +155,23 @@ function initMobileMenu() {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
                 navLinks.classList.remove('active');
+                if (mobileOverlay) mobileOverlay.classList.remove('active');
+                body.classList.remove('menu-open');
             });
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && menuToggle.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+        
+        // Close menu on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && menuToggle.classList.contains('active')) {
+                toggleMenu();
+            }
         });
     }
 }
