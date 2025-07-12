@@ -1,7 +1,6 @@
-/* Custom Cursor - DISABLED */
+/* Custom Cursor - ENABLED */
 .cursor,
 .cursor-follower {
-    /* 
     position: fixed;
     pointer-events: none;
     z-index: 9999;
@@ -9,12 +8,9 @@
     transform: translate(-50%, -50%);
     transition: opacity 0.3s ease;
     mix-blend-mode: difference;
-    */
-    display: none; /* Hide cursor elements */
 }
 
 .cursor {
-    /* 
     width: 10px;
     height: 10px;
     background-color: var(--primary-color);
@@ -24,12 +20,9 @@
         height 0.3s ease,
         background-color 0.3s ease,
         transform 0.01s linear;
-    */
-    display: none;
 }
 
 .cursor-follower {
-    /* 
     width: 30px;
     height: 30px;
     border: 2px solid var(--primary-color);
@@ -39,26 +32,72 @@
         height 0.5s cubic-bezier(0.19, 1, 0.22, 1),
         border-color 0.3s ease,
         transform 0.15s ease;
-    */
-    display: none;
 }
 
-/* Cursor States - DISABLED */
-/* 
+/* Active cursor states */
+.cursor.active {
+    background-color: #ff0030;
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.cursor-follower.active {
+    border-color: #ff0030;
+    background-color: rgba(255, 0, 48, 0.1);
+    transform: translate(-50%, -50%) scale(1.3);
+}
+
+/* Smooth cursor transitions */
+.cursor {
+    transition: 
+        width 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+        height 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+        background-color 0.3s ease,
+        transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.cursor-follower {
+    transition: 
+        width 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+        height 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Cursor text effects */
+.cursor::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.cursor.active::after {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+}
+
+/* Cursor States - ENABLED */
 body:hover .cursor,
 body:hover .cursor-follower {
     opacity: 1;
 }
-*/
-
-/* Link hover effect - DISABLED */
-/* 
+/* Link hover effect - ENABLED */
 a:hover ~ .cursor,
 button:hover ~ .cursor,
 .btn:hover ~ .cursor,
 .service-card:hover ~ .cursor,
 .project-card:hover ~ .cursor,
-.social-icon:hover ~ .cursor {
+.social-icon:hover ~ .cursor,
+.nav-link:hover ~ .cursor,
+.menu-toggle:hover ~ .cursor {
     width: 15px;
     height: 15px;
     background-color: #fff;
@@ -69,16 +108,44 @@ button:hover ~ .cursor-follower,
 .btn:hover ~ .cursor-follower,
 .service-card:hover ~ .cursor-follower,
 .project-card:hover ~ .cursor-follower,
-.social-icon:hover ~ .cursor-follower {
+.social-icon:hover ~ .cursor-follower,
+.nav-link:hover ~ .cursor-follower,
+.menu-toggle:hover ~ .cursor-follower {
     width: 40px;
     height: 40px;
     border-color: var(--primary-color);
     background-color: rgba(255, 0, 53, 0.1);
 }
-*/
 
-/* Input focus effect - DISABLED */
-/* 
+/* Project card hover effects */
+.project-card-3d:hover ~ .cursor {
+    width: 20px;
+    height: 20px;
+    background-color: #ff0030;
+}
+
+.project-card-3d:hover ~ .cursor-follower {
+    width: 60px;
+    height: 60px;
+    border-color: #ff0030;
+    background-color: rgba(255, 0, 48, 0.2);
+}
+
+/* Team member hover effects */
+.team-member:hover ~ .cursor {
+    width: 18px;
+    height: 18px;
+    background-color: #ff0030;
+}
+
+.team-member:hover ~ .cursor-follower {
+    width: 50px;
+    height: 50px;
+    border-color: #ff0030;
+    background-color: rgba(255, 0, 48, 0.15);
+}
+
+/* Input focus effect - ENABLED */
 input:focus ~ .cursor,
 textarea:focus ~ .cursor {
     width: 5px;
@@ -90,11 +157,13 @@ input:focus ~ .cursor-follower,
 textarea:focus ~ .cursor-follower {
     opacity: 0;
 }
-*/
 
-/* Hide default cursor - RESET TO DEFAULT */
+/* Enhanced cursor for interactive elements */
 html, 
-body, 
+body {
+    cursor: none;
+}
+
 a, 
 button, 
 input, 
@@ -105,18 +174,59 @@ textarea,
 .social-icon,
 .nav-link,
 .menu-toggle,
-.project-link {
-    cursor: auto !important; /* Reset to default cursor */
+.project-link,
+.team-member,
+.service-card-advanced,
+.contact-info-item {
+    cursor: none;
 }
 
 /* Mobile devices - revert to default cursor */
 @media (max-width: 768px), (pointer: coarse) {
     .cursor,
     .cursor-follower {
-        display: none;
+        display: none !important;
     }
     
-    html, body, a, button, input, textarea, .btn {
+    html, 
+    body, 
+    a, 
+    button, 
+    input, 
+    textarea, 
+    .btn,
+    .service-card, 
+    .project-card, 
+    .social-icon,
+    .nav-link,
+    .menu-toggle,
+    .project-link,
+    .team-member,
+    .service-card-advanced,
+    .contact-info-item {
         cursor: auto !important;
     }
+}
+
+/* Cursor blend modes for different backgrounds */
+.cursor {
+    mix-blend-mode: difference;
+}
+
+.cursor-follower {
+    mix-blend-mode: normal;
+}
+
+/* Loading animation for cursor */
+@keyframes cursorPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+.cursor.loading {
+    animation: cursorPulse 1s infinite;
 }

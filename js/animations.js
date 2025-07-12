@@ -270,3 +270,335 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Advanced Scroll Animations
+document.addEventListener('DOMContentLoaded', function() {
+    initAdvancedScrollAnimations();
+    initParallaxElements();
+    initScrollTimeline();
+    initMagneticElements();
+});
+
+// Advanced scroll-triggered animations
+function initAdvancedScrollAnimations() {
+    // Check if Intersection Observer is supported
+    if ('IntersectionObserver' in window) {
+        
+        // Slide-up animation observer
+        const slideUpObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-up-active');
+                }
+            });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        // Slide-in-left animation observer
+        const slideLeftObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-left-active');
+                }
+            });
+        }, { 
+            threshold: 0.15,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        // Slide-in-right animation observer
+        const slideRightObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-right-active');
+                }
+            });
+        }, { 
+            threshold: 0.15,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        // Scale-in animation observer
+        const scaleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('scale-in-active');
+                }
+            });
+        }, { 
+            threshold: 0.2,
+            rootMargin: '0px 0px -20px 0px'
+        });
+
+        // Stagger animation observer
+        const staggerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const children = entry.target.querySelectorAll('.stagger-item');
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.add('stagger-active');
+                        }, index * 100);
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Apply animations to elements
+        document.querySelectorAll('.animate-slide-up').forEach(el => {
+            slideUpObserver.observe(el);
+        });
+
+        document.querySelectorAll('.animate-slide-left').forEach(el => {
+            slideLeftObserver.observe(el);
+        });
+
+        document.querySelectorAll('.animate-slide-right').forEach(el => {
+            slideRightObserver.observe(el);
+        });
+
+        document.querySelectorAll('.animate-scale').forEach(el => {
+            scaleObserver.observe(el);
+        });
+
+        document.querySelectorAll('.animate-stagger').forEach(el => {
+            staggerObserver.observe(el);
+        });
+    }
+}
+
+// Parallax scrolling effects
+function initParallaxElements() {
+    const parallaxElements = document.querySelectorAll('.parallax-element');
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset;
+        
+        parallaxElements.forEach(element => {
+            const speed = element.dataset.speed || 0.5;
+            const yPos = -(scrollTop * speed);
+            element.style.transform = `translateY(${yPos}px)`;
+        });
+    });
+    
+    // Background parallax for sections
+    const parallaxSections = document.querySelectorAll('.parallax-bg');
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset;
+        
+        parallaxSections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const speed = 0.3;
+            
+            if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+                const yPos = scrollTop * speed;
+                section.style.backgroundPosition = `center ${yPos}px`;
+            }
+        });
+    });
+}
+
+// Scroll timeline with progress indicator
+function initScrollTimeline() {
+    // Create scroll progress bar
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    progressBar.innerHTML = '<div class="scroll-progress-bar"></div>';
+    document.body.appendChild(progressBar);
+    
+    const progressBarFill = progressBar.querySelector('.scroll-progress-bar');
+    
+    window.addEventListener('scroll', () => {
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollProgress = (window.pageYOffset / scrollHeight) * 100;
+        progressBarFill.style.width = `${scrollProgress}%`;
+    });
+    
+    // Section progress indicators
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', () => {
+        let currentSection = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (window.pageYOffset >= sectionTop - 200) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active-section');
+            if (link.getAttribute('href') === `#${currentSection}`) {
+                link.classList.add('active-section');
+            }
+        });
+    });
+}
+
+// Magnetic elements that follow cursor
+function initMagneticElements() {
+    const magneticElements = document.querySelectorAll('.magnetic');
+    
+    magneticElements.forEach(element => {
+        element.addEventListener('mousemove', (e) => {
+            const rect = element.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            element.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            element.style.transform = 'translate(0px, 0px)';
+        });
+    });
+}
+
+// Particle System
+function initParticleSystem() {
+    const particleContainer = document.createElement('div');
+    particleContainer.className = 'particles';
+    document.body.appendChild(particleContainer);
+    
+    function createParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 10 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particleContainer.appendChild(particle);
+        
+        setTimeout(() => {
+            if (particle.parentNode) {
+                particle.parentNode.removeChild(particle);
+            }
+        }, 20000);
+    }
+    
+    // Create particles periodically
+    setInterval(createParticle, 300);
+    
+    // Create initial particles
+    for (let i = 0; i < 20; i++) {
+        setTimeout(createParticle, i * 100);
+    }
+}
+
+// Enhanced scroll effects with mouse movement
+function initMouseFollowEffects() {
+    let mouseX = 0;
+    let mouseY = 0;
+    
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        // Apply subtle mouse-following effect to floating shapes
+        const shapes = document.querySelectorAll('.floating-shapes .shape');
+        shapes.forEach((shape, index) => {
+            const speed = (index + 1) * 0.02;
+            const x = (mouseX - window.innerWidth / 2) * speed;
+            const y = (mouseY - window.innerHeight / 2) * speed;
+            
+            shape.style.transform = `translate(${x}px, ${y}px)`;
+        });
+        
+        // Apply parallax effect to section backgrounds
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const speed = 0.01;
+                const x = (mouseX - window.innerWidth / 2) * speed;
+                const y = (mouseY - window.innerHeight / 2) * speed;
+                
+                section.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+            }
+        });
+    });
+}
+
+// Smooth scrolling enhancements
+function initSmoothScrolling() {
+    // Enhanced smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// Initialize all advanced features
+document.addEventListener('DOMContentLoaded', () => {
+    // Only run advanced animations on desktop
+    if (window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        initParticleSystem();
+        initMouseFollowEffects();
+    }
+    
+    initSmoothScrolling();
+    
+    // Add loading completion effect
+    window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
+    });
+});
+
+// Floating elements animation
+function initFloatingElements() {
+    const floatingElements = document.querySelectorAll('.floating');
+    
+    floatingElements.forEach((element, index) => {
+        const delay = index * 0.2;
+        const duration = 3 + (index % 3);
+        
+        element.style.animationDelay = `${delay}s`;
+        element.style.animationDuration = `${duration}s`;
+    });
+}
+
+// Text reveal animation
+function initTextRevealAnimation() {
+    const textElements = document.querySelectorAll('.text-reveal');
+    
+    const textObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const text = entry.target.textContent;
+                entry.target.innerHTML = '';
+                
+                [...text].forEach((char, index) => {
+                    const span = document.createElement('span');
+                    span.textContent = char === ' ' ? '\u00A0' : char;
+                    span.style.animationDelay = `${index * 0.03}s`;
+                    span.classList.add('char-reveal');
+                    entry.target.appendChild(span);
+                });
+                
+                entry.target.classList.add('text-reveal-active');
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    textElements.forEach(el => textObserver.observe(el));
+}
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', () => {
+    initFloatingElements();
+    initTextRevealAnimation();
+});
